@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Português — Projeto final: folheto</title>
+  <style>
+    :root { --bg:#f8fafc; --card:#fff; --ink:#111; --muted:#475569; --line:#e2e8f0; --brand:#4338ca; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .wrap { max-width: 900px; margin: 28px auto; padding: 0 16px; }
+    .card { background: var(--card); border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.08); padding: 28px; border: 1px solid var(--line); }
+    h1 { margin: 0 0 8px; font-size: 22px; font-weight: 800; color: var(--brand); }
+    .sub { color: var(--muted); margin-bottom: 16px; }
+    .actions { margin-top: 20px; display: flex; gap: 12px; justify-content: center; }
+    .btn { border:0; border-radius: 10px; padding: 10px 14px; font-weight: 600; cursor:pointer; }
+    .btn.print { background:#2563eb; color:#fff; }
+    .btn.back { background:#334155; color:#fff; text-decoration:none; display:inline-flex; align-items:center; }
+    .box { background:#f1f5f9; border:1px solid var(--line); border-radius: 12px; padding:16px; }
+    @media print {
+      .no-print { display: none !important; }
+      body { background:#fff !important; color:#111; font-size: 12pt; }
+      a:link:after, a:visited:after { content:""; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <h1>Português — Projeto final: folheto</h1>
+        <p class="sub">Produção/Semiótica (EM13LP18/36)</p>
+      </header>
+<section class="space-y-4">
+  <p><strong>Objetivo:</strong> planejar e produzir um folheto claro.</p>
+  <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+    <p><strong>Título:</strong> __________________________</p>
+    <ul class="list-disc pl-5">
+      <li>Informação 1: ____________________</li>
+      <li>Informação 2: ____________________</li>
+      <li>Informação 3: ____________________</li>
+    </ul>
+    <p><strong>Slogan:</strong> __________________________</p>
+  </div>
+  <p>Use frases curtas e um ícone/desenho.</p>
+  <details class="mt-3">
+    <summary class="cursor-pointer font-semibold" style="color:#4338ca">Checklist</summary>
+    <div class="mt-2 text-sm">Tem título, 3 infos e slogan. Texto legível.</div>
+  </details>
+</section>
+      <div class="actions no-print">
+        <button class="btn print" onclick="window.print()">🖨️ Imprimir</button>
+        <a class="btn back" href="/cliente/portugues">← Voltar às atividades</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

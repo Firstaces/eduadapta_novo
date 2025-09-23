@@ -1,0 +1,413 @@
+<!-- CSS local desta atividade -->
+<style>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #111;
+      font-size: 12pt;
+    }
+    a:link:after,
+    a:visited:after {
+      content: "";
+    } /* não imprimir URLs dos links */
+  }
+  .calculator-display {
+    font-family: "Courier New", monospace;
+    background: #1f2937;
+    color: #10b981;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  /* cole aqui suas animações e estilos .combination-animation, .event-flow, .formula-highlight etc */
+</style>
+
+<div class="bg-gray-50 p-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <!-- Cole aqui o CONTEÚDO da atividade (o mesmo que você já tem), 
+         mas sem <!DOCTYPE>, <html>, <head>, <body>, sem Tailwind CDN e sem o script do Cloudflare. -->
+               <style>
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12pt; }
+        }
+        .money-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .growth-chart {
+            animation: grow 2s ease-out;
+        }
+        @keyframes grow {
+            from { transform: scaleY(0); }
+            to { transform: scaleY(1); }
+        }
+        .compound-highlight {
+            background: linear-gradient(45deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <!-- Cabeçalho -->
+        <div class="border-b-2 border-orange-500 pb-4 mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-orange-600">EduAdapta - Kit Matemática</h1>
+                    <h2 class="text-xl font-semibold text-gray-700">Atividade 12: Juros Compostos - Investimento</h2>
+                </div>
+                <div class="text-right text-sm text-gray-600">
+                    <p>Nome: _________________________</p>
+                    <p>Data: ___/___/______</p>
+                    <p>Tempo: 40 minutos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 mb-6">
+            <h3 class="font-bold text-orange-700 mb-2">🎯 Objetivo:</h3>
+            <p class="text-gray-700">Calcular juros compostos e montantes em situações de investimento e poupança</p>
+        </div>
+
+        <!-- Situação Problema -->
+        <div class="bg-blue-50 border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-bold text-blue-800 mb-4">💰 Situação: Planejamento Financeiro</h4>
+            <p class="text-gray-700 mb-4">
+                Ana acabou de completar 18 anos e quer começar a investir para realizar seus sonhos. 
+                Ela precisa entender como os juros compostos podem fazer seu dinheiro crescer ao longo do tempo.
+            </p>
+            
+            <div class="bg-white p-4 rounded border">
+                <h5 class="font-semibold mb-2">📐 Fórmula dos Juros Compostos:</h5>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-green-100 p-4 rounded text-center">
+                        <p class="font-bold mb-2">MONTANTE</p>
+                        <p class="text-2xl font-bold mb-2">M = C × (1 + i)ⁿ</p>
+                        <p class="text-sm">Onde:</p>
+                        <p class="text-sm">M = Montante final</p>
+                        <p class="text-sm">C = Capital inicial</p>
+                        <p class="text-sm">i = Taxa de juros (decimal)</p>
+                        <p class="text-sm">n = Tempo (períodos)</p>
+                    </div>
+                    <div class="bg-blue-100 p-4 rounded text-center">
+                        <p class="font-bold mb-2">JUROS</p>
+                        <p class="text-2xl font-bold mb-2">J = M - C</p>
+                        <p class="text-sm mt-4">Diferença entre montante e capital</p>
+                    </div>
+                </div>
+                <div class="mt-3 bg-yellow-100 p-2 rounded text-center">
+                    <p class="text-sm font-semibold">Lembre-se: Taxa em % ÷ 100 = Taxa decimal (Ex: 5% = 0,05)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercícios -->
+        <div class="space-y-6">
+            <!-- Parte 1 -->
+            <div class="border rounded-lg p-4 bg-gray-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🏦 Parte 1: Primeira Aplicação</h4>
+                
+                <div class="bg-white p-4 rounded border">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-green-100 p-6 rounded-lg border-2 border-green-300 money-animation">
+                            <div class="text-center">
+                                <p class="text-4xl mb-2">💵</p>
+                                <p class="text-lg font-bold">Poupança</p>
+                                <p class="text-2xl font-bold text-green-600">R$ 1.000,00</p>
+                                <p class="text-lg font-bold text-blue-600">Taxa: 6% ao ano</p>
+                                <p class="text-lg font-bold text-purple-600">Tempo: 3 anos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-yellow-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Identificando os dados:</p>
+                            <p>Capital inicial (C): R$ ________</p>
+                            <p>Taxa de juros (i): ______% ao ano = ________ (decimal)</p>
+                            <p>Tempo (n): ________ anos</p>
+                        </div>
+                        
+                        <div class="bg-green-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Aplicando a fórmula:</p>
+                            <p>M = C × (1 + i)ⁿ</p>
+                            <p>M = ________ × (1 + ________)³</p>
+                            <p>M = ________ × (________)³</p>
+                            <p>M = ________ × ________</p>
+                            <p>M = R$ ________</p>
+                        </div>
+                        
+                        <div class="bg-blue-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Calculando os juros:</p>
+                            <p>J = M - C</p>
+                            <p>J = R$ ________ - R$ ________</p>
+                            <p>J = R$ ________</p>
+                        </div>
+                        
+                        <div class="bg-purple-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Cálculo passo a passo de (1,06)³:</p>
+                            <p>1º ano: 1,06¹ = ________</p>
+                            <p>2º ano: 1,06² = 1,06 × 1,06 = ________</p>
+                            <p>3º ano: 1,06³ = ________ × 1,06 = ________</p>
+                        </div>
+                        
+                        <div class="bg-orange-100 p-4 rounded">
+                            <p class="font-semibold text-orange-700">
+                                Resultado: Em 3 anos, R$ 1.000 se transformaram em R$ ________ 📈
+                            </p>
+                            <p class="font-semibold text-green-700">
+                                Rendimento total: R$ ________ 💰
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 2 -->
+            <div class="border rounded-lg p-4 bg-green-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📊 Parte 2: Comparando Investimentos</h4>
+                <div class="bg-white p-4 rounded border space-y-4">
+                    <p class="font-semibold mb-4">Ana está comparando diferentes opções de investimento para R$ 5.000,00 por 2 anos:</p>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse border border-gray-400">
+                            <thead>
+                                <tr class="bg-gray-200">
+                                    <th class="border border-gray-400 p-2">Investimento</th>
+                                    <th class="border border-gray-400 p-2">Capital</th>
+                                    <th class="border border-gray-400 p-2">Taxa (ano)</th>
+                                    <th class="border border-gray-400 p-2">Tempo</th>
+                                    <th class="border border-gray-400 p-2">Montante</th>
+                                    <th class="border border-gray-400 p-2">Juros</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-400 p-2">🏦 Poupança</td>
+                                    <td class="border border-gray-400 p-2">R$ 5.000</td>
+                                    <td class="border border-gray-400 p-2">4%</td>
+                                    <td class="border border-gray-400 p-2">2 anos</td>
+                                    <td class="border border-gray-400 p-2">R$ _____</td>
+                                    <td class="border border-gray-400 p-2">R$ _____</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-400 p-2">💎 CDB</td>
+                                    <td class="border border-gray-400 p-2">R$ 5.000</td>
+                                    <td class="border border-gray-400 p-2">8%</td>
+                                    <td class="border border-gray-400 p-2">2 anos</td>
+                                    <td class="border border-gray-400 p-2">R$ _____</td>
+                                    <td class="border border-gray-400 p-2">R$ _____</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-400 p-2">📈 Fundo</td>
+                                    <td class="border border-gray-400 p-2">R$ 5.000</td>
+                                    <td class="border border-gray-400 p-2">12%</td>
+                                    <td class="border border-gray-400 p-2">2 anos</td>
+                                    <td class="border border-gray-400 p-2">R$ _____</td>
+                                    <td class="border border-gray-400 p-2">R$ _____</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-blue-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Poupança (4% a.a.):</p>
+                            <p>M = 5.000 × (1,04)²</p>
+                            <p>M = 5.000 × ________</p>
+                            <p>M = R$ ________</p>
+                            <p>J = R$ ________ - R$ 5.000</p>
+                            <p>J = R$ ________</p>
+                        </div>
+                        
+                        <div class="bg-green-100 p-4 rounded">
+                            <p class="font-semibold mb-2">CDB (8% a.a.):</p>
+                            <p>M = 5.000 × (1,08)²</p>
+                            <p>M = 5.000 × ________</p>
+                            <p>M = R$ ________</p>
+                            <p>J = R$ ________ - R$ 5.000</p>
+                            <p>J = R$ ________</p>
+                        </div>
+                        
+                        <div class="bg-purple-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Fundo (12% a.a.):</p>
+                            <p>M = 5.000 × (1,12)²</p>
+                            <p>M = 5.000 × ________</p>
+                            <p>M = R$ ________</p>
+                            <p>J = R$ ________ - R$ 5.000</p>
+                            <p>J = R$ ________</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-100 p-4 rounded">
+                        <p class="font-semibold mb-2">Comparação dos rendimentos:</p>
+                        <p>• Diferença CDB - Poupança: R$ ________ - R$ ________ = R$ ________</p>
+                        <p>• Diferença Fundo - CDB: R$ ________ - R$ ________ = R$ ________</p>
+                        <p class="font-bold text-green-700">Melhor investimento: ________________</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 3 -->
+            <div class="border rounded-lg p-4 bg-blue-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🎯 Parte 3: Planejando o Futuro</h4>
+                <div class="bg-white p-4 rounded border space-y-4">
+                    <p class="font-semibold mb-4">Ana quer juntar R$ 20.000 para comprar um carro em 5 anos. Quanto ela precisa investir hoje?</p>
+                    
+                    <div class="flex justify-center mb-4">
+                        <svg width="400" height="200" viewBox="0 0 400 200" class="border rounded">
+                            <!-- Linha do tempo -->
+                            <line x1="50" y1="150" x2="350" y2="150" stroke="#333" stroke-width="3"/>
+                            
+                            <!-- Marcos temporais -->
+                            <circle cx="50" cy="150" r="8" fill="#10b981"/>
+                            <circle cx="110" cy="150" r="6" fill="#3b82f6"/>
+                            <circle cx="170" cy="150" r="6" fill="#3b82f6"/>
+                            <circle cx="230" cy="150" r="6" fill="#3b82f6"/>
+                            <circle cx="290" cy="150" r="6" fill="#3b82f6"/>
+                            <circle cx="350" cy="150" r="8" fill="#ef4444"/>
+                            
+                            <!-- Labels -->
+                            <text x="50" y="175" font-size="12" text-anchor="middle">Hoje</text>
+                            <text x="110" y="175" font-size="12" text-anchor="middle">1 ano</text>
+                            <text x="170" y="175" font-size="12" text-anchor="middle">2 anos</text>
+                            <text x="230" y="175" font-size="12" text-anchor="middle">3 anos</text>
+                            <text x="290" y="175" font-size="12" text-anchor="middle">4 anos</text>
+                            <text x="350" y="175" font-size="12" text-anchor="middle">5 anos</text>
+                            
+                            <!-- Valores -->
+                            <text x="50" y="130" font-size="14" text-anchor="middle" font-weight="bold">C = ?</text>
+                            <text x="350" y="130" font-size="14" text-anchor="middle" font-weight="bold">R$ 20.000</text>
+                            
+                            <!-- Seta de crescimento -->
+                            <path d="M 70 140 Q 200 100 330 140" stroke="#10b981" stroke-width="3" fill="none" class="growth-chart"/>
+                            <text x="200" y="110" font-size="12" text-anchor="middle" font-weight="bold" class="compound-highlight">10% a.a.</text>
+                            
+                            <!-- Carro -->
+                            <text x="350" y="100" font-size="20" text-anchor="middle">🚗</text>
+                        </svg>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-red-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Dados do problema:</p>
+                            <p>Montante desejado (M): R$ ________</p>
+                            <p>Taxa de juros (i): ______% ao ano = ________ (decimal)</p>
+                            <p>Tempo (n): ________ anos</p>
+                            <p>Capital inicial (C): ? (o que queremos descobrir)</p>
+                        </div>
+                        
+                        <div class="bg-orange-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Reorganizando a fórmula:</p>
+                            <p>M = C × (1 + i)ⁿ</p>
+                            <p>C = M ÷ (1 + i)ⁿ</p>
+                            <p>C = ________ ÷ (1 + ________)⁵</p>
+                            <p>C = ________ ÷ (________)⁵</p>
+                        </div>
+                        
+                        <div class="bg-green-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Calculando (1,10)⁵:</p>
+                            <p>(1,10)¹ = ________</p>
+                            <p>(1,10)² = 1,10 × 1,10 = ________</p>
+                            <p>(1,10)³ = ________ × 1,10 = ________</p>
+                            <p>(1,10)⁴ = ________ × 1,10 = ________</p>
+                            <p>(1,10)⁵ = ________ × 1,10 = ________</p>
+                        </div>
+                        
+                        <div class="bg-blue-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Resultado final:</p>
+                            <p>C = 20.000 ÷ ________</p>
+                            <p>C = R$ ________</p>
+                        </div>
+                        
+                        <div class="bg-purple-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Verificação:</p>
+                            <p>M = ________ × (1,10)⁵</p>
+                            <p>M = ________ × ________</p>
+                            <p>M = R$ ________ ✓</p>
+                        </div>
+                        
+                        <div class="bg-yellow-100 p-4 rounded">
+                            <p class="font-semibold text-orange-700">
+                                Ana precisa investir R$ ________ hoje para ter R$ 20.000 em 5 anos! 🎯
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desafio -->
+            <div class="border rounded-lg p-4 bg-purple-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🏆 Desafio</h4>
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-2">🎯 O Poder dos Juros Compostos:</p>
+                    <p class="mb-3">
+                        Compare o crescimento de R$ 1.000 em diferentes períodos com taxa de 8% ao ano:
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-100 p-3 rounded">
+                            <p class="font-semibold">Em 5 anos:</p>
+                            <p>M = 1.000 × (1,08)⁵ = 1.000 × ________ = R$ ________</p>
+                            <p>Juros: R$ ________ - R$ 1.000 = R$ ________</p>
+                        </div>
+                        
+                        <div class="bg-gray-100 p-3 rounded">
+                            <p class="font-semibold">Em 10 anos:</p>
+                            <p>M = 1.000 × (1,08)¹⁰ = 1.000 × ________ = R$ ________</p>
+                            <p>Juros: R$ ________ - R$ 1.000 = R$ ________</p>
+                        </div>
+                        
+                        <div class="bg-gray-100 p-3 rounded">
+                            <p class="font-semibold">Em 20 anos:</p>
+                            <p>M = 1.000 × (1,08)²⁰ = 1.000 × ________ = R$ ________</p>
+                            <p>Juros: R$ ________ - R$ 1.000 = R$ ________</p>
+                        </div>
+                        
+                        <div class="bg-yellow-100 p-3 rounded">
+                            <p class="font-semibold">Análise do crescimento:</p>
+                            <p>• De 5 para 10 anos: R$ ________ → R$ ________ (multiplicou por ____)</p>
+                            <p>• De 10 para 20 anos: R$ ________ → R$ ________ (multiplicou por ____)</p>
+                            <p class="font-bold text-green-700">Em 20 anos, R$ 1.000 se transformaram em R$ ________!</p>
+                        </div>
+                        
+                        <div class="mt-4 bg-blue-50 p-3 rounded">
+                            <p class="font-semibold">Dica de Einstein:</p>
+                            <p class="italic">"Os juros compostos são a oitava maravilha do mundo. Quem entende, ganha; quem não entende, paga."</p>
+                            <p class="mt-2">Explique com suas palavras por que começar a investir cedo é importante:</p>
+                            <p>________________________________________________</p>
+                            <p>________________________________________________</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Rodapé local da atividade (opcional; o viewer já tem botão de Imprimir) -->
+    <div class="no-print mt-6 flex gap-4 justify-center">
+      <button
+        onclick="window.print()"
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all"
+      >
+        🖨️ Imprimir
+      </button>
+      <a
+        href="/cliente/matematica"
+        class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-all"
+      >
+        ← Voltar
+      </a>
+    </div>
+  </div>
+</div>

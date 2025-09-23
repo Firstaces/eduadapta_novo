@@ -1,0 +1,43 @@
+{
+  "codigo": "M07",
+  "titulo": "Volume do Cilindro — Reservatório",
+  "tempo": "50 min",
+  "objetivo": "Calcular volume e capacidade de reservatórios cilíndricos",
+  "intro": "Nesta atividade você vai aplicar a fórmula do volume do cilindro: V = π · r² · h.",
+  "questoes": [
+    {
+      "id": "q1",
+      "tipo": "numeric",
+      "enunciado": "Um reservatório cilíndrico tem raio de 1,2 m e altura de 3 m. Qual é o volume em m³? Use π ≈ 3,14.",
+      "unidade": "m³",
+      "dica": "V = π·r²·h → 3,14 × (1,2)² × 3",
+      "solucao": "V ≈ 3,14 × 1,44 × 3 = 13,5648 ≈ 13,56 m³",
+      "resposta": 13.56,
+      "tolerancia": 0.05
+    },
+    {
+      "id": "q2",
+      "tipo": "numeric",
+      "enunciado": "O volume do reservatório acima, em litros, é aproximadamente quanto? (1 m³ = 1000 L)",
+      "unidade": "L",
+      "dica": "Multiplique o volume em m³ por 1000.",
+      "solucao": "13,56 m³ × 1000 = 13.560 L (aprox.)",
+      "resposta": 13560,
+      "tolerancia": 30
+    },
+    {
+      "id": "q3",
+      "tipo": "mcq",
+      "enunciado": "Assinale a alternativa CORRETA sobre o volume do cilindro:",
+      "alternativas": [
+        "Dobrar a altura dobra o volume.",
+        "Dobrar o raio dobra o volume.",
+        "Dobrar o raio não altera o volume.",
+        "Dobrar a altura reduz o volume pela metade."
+      ],
+      "correta": 0,
+      "dica": "V = π·r²·h — repare no r².",
+      "solucao": "Se h dobra, V dobra; se r dobra, V quadruplica (porque r²)."
+    }
+  ]
+}

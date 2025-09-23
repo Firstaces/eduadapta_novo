@@ -1,0 +1,229 @@
+{
+  "collection": "ciencias-atividades",
+  "version": 1,
+  "pathHint": "public/atividades/ciencias/manifests",
+  "routePrefix": "/atividades/ciencias/manifests",
+  "count": 20,
+  "items": [
+    {
+      "id": 1,
+      "title": "01. Célula: partes e funções",
+      "eixo": "Biologia • Estrutura celular (EM13CNT101)",
+      "subject": "Ciências",
+      "summary": "Reconhecer partes básicas da célula e suas funções.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-01.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-01.html",
+      "slug": "ciencias-atividade-01",
+      "updatedAt": "2025-09-18T18:18:38.502036Z"
+    },
+    {
+      "id": 2,
+      "title": "02. Tecidos e órgãos",
+      "eixo": "Biologia • Organização do corpo (EM13CNT101)",
+      "subject": "Ciências",
+      "summary": "Entender níveis: células → tecidos → órgãos → sistemas.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-02.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-02.html",
+      "slug": "ciencias-atividade-02",
+      "updatedAt": "2025-09-18T18:18:38.502048Z"
+    },
+    {
+      "id": 3,
+      "title": "03. Sistema digestório",
+      "eixo": "Biologia • Funções vitais (EM13CNT102)",
+      "subject": "Ciências",
+      "summary": "Passos da digestão: boca → estômago → intestinos.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-03.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-03.html",
+      "slug": "ciencias-atividade-03",
+      "updatedAt": "2025-09-18T18:18:38.502052Z"
+    },
+    {
+      "id": 4,
+      "title": "04. Sistema respiratório",
+      "eixo": "Biologia • Trocas gasosas (EM13CNT102)",
+      "subject": "Ciências",
+      "summary": "Ar entra, pulmões trocam gases, ar sai.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-04.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-04.html",
+      "slug": "ciencias-atividade-04",
+      "updatedAt": "2025-09-18T18:18:38.502055Z"
+    },
+    {
+      "id": 5,
+      "title": "05. Sistema circulatório",
+      "eixo": "Biologia • Transporte no corpo (EM13CNT102)",
+      "subject": "Ciências",
+      "summary": "Coração bombeia sangue, vasos distribuem.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-05.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-05.html",
+      "slug": "ciencias-atividade-05",
+      "updatedAt": "2025-09-18T18:18:38.502058Z"
+    },
+    {
+      "id": 6,
+      "title": "06. Sistema nervoso",
+      "eixo": "Biologia • Coordenação (EM13CNT102)",
+      "subject": "Ciências",
+      "summary": "Cérebro coordena ações; nervos levam mensagens.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-06.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-06.html",
+      "slug": "ciencias-atividade-06",
+      "updatedAt": "2025-09-18T18:18:38.502061Z"
+    },
+    {
+      "id": 7,
+      "title": "07. Reprodução e saúde",
+      "eixo": "Biologia • Reprodução humana (EM13CNT103)",
+      "subject": "Ciências",
+      "summary": "Noções de cuidado, respeito e prevenção.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-07.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-07.html",
+      "slug": "ciencias-atividade-07",
+      "updatedAt": "2025-09-18T18:18:38.502064Z"
+    },
+    {
+      "id": 8,
+      "title": "08. Ecossistemas",
+      "eixo": "Ecologia • Interações (EM13CNT201)",
+      "subject": "Ciências",
+      "summary": "Seres vivos + ambiente + relações.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-08.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-08.html",
+      "slug": "ciencias-atividade-08",
+      "updatedAt": "2025-09-18T18:18:38.502069Z"
+    },
+    {
+      "id": 9,
+      "title": "09. Cadeias alimentares",
+      "eixo": "Ecologia • Fluxo de energia (EM13CNT201)",
+      "subject": "Ciências",
+      "summary": "Produtor → consumidor → decompositor.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-09.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-09.html",
+      "slug": "ciencias-atividade-09",
+      "updatedAt": "2025-09-18T18:18:38.502073Z"
+    },
+    {
+      "id": 10,
+      "title": "10. Biomas brasileiros",
+      "eixo": "Ecologia • Diversidade (EM13CNT202)",
+      "subject": "Ciências",
+      "summary": "Reconhecer biomas e características gerais.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-10.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-10.html",
+      "slug": "ciencias-atividade-10",
+      "updatedAt": "2025-09-18T18:18:38.502076Z"
+    },
+    {
+      "id": 11,
+      "title": "11. Fotossíntese",
+      "eixo": "Biologia • Transformação de energia (EM13CNT203)",
+      "subject": "Ciências",
+      "summary": "Plantas produzem alimento com luz, água e gás carbônico.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-11.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-11.html",
+      "slug": "ciencias-atividade-11",
+      "updatedAt": "2025-09-18T18:18:38.502091Z"
+    },
+    {
+      "id": 12,
+      "title": "12. Respiração celular",
+      "eixo": "Biologia • Energia nas células (EM13CNT203)",
+      "subject": "Ciências",
+      "summary": "Células usam glicose e oxigênio para obter energia.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-12.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-12.html",
+      "slug": "ciencias-atividade-12",
+      "updatedAt": "2025-09-18T18:18:38.502094Z"
+    },
+    {
+      "id": 13,
+      "title": "13. Matéria: estados físicos",
+      "eixo": "Química • Matéria e propriedades (EM13CNT301)",
+      "subject": "Ciências",
+      "summary": "Sólido, líquido e gasoso em exemplos do dia a dia.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-13.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-13.html",
+      "slug": "ciencias-atividade-13",
+      "updatedAt": "2025-09-18T18:18:38.502096Z"
+    },
+    {
+      "id": 14,
+      "title": "14. Misturas e separações",
+      "eixo": "Química • Misturas (EM13CNT301)",
+      "subject": "Ciências",
+      "summary": "Identificar mistura e formas simples de separar.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-14.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-14.html",
+      "slug": "ciencias-atividade-14",
+      "updatedAt": "2025-09-18T18:18:38.502098Z"
+    },
+    {
+      "id": 15,
+      "title": "15. Tabela periódica: o básico",
+      "eixo": "Química • Materiais e propriedades (EM13CNT302)",
+      "subject": "Ciências",
+      "summary": "Entender que elementos formam materiais do dia a dia.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-15.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-15.html",
+      "slug": "ciencias-atividade-15",
+      "updatedAt": "2025-09-18T18:18:38.502101Z"
+    },
+    {
+      "id": 16,
+      "title": "16. Forças e movimento",
+      "eixo": "Física • Interações e equilíbrio (EM13CNT401)",
+      "subject": "Ciências",
+      "summary": "Empurrar/puxar mudam o movimento dos corpos.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-16.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-16.html",
+      "slug": "ciencias-atividade-16",
+      "updatedAt": "2025-09-18T18:18:38.502103Z"
+    },
+    {
+      "id": 17,
+      "title": "17. Formas de energia",
+      "eixo": "Física • Energia e transformações (EM13CNT402)",
+      "subject": "Ciências",
+      "summary": "Luz, som, térmica, elétrica e movimento.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-17.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-17.html",
+      "slug": "ciencias-atividade-17",
+      "updatedAt": "2025-09-18T18:18:38.502105Z"
+    },
+    {
+      "id": 18,
+      "title": "18. Eletricidade simples",
+      "eixo": "Física • Circuitos (EM13CNT402)",
+      "subject": "Ciências",
+      "summary": "Circuito: fonte + fios + carga (lâmpada).",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-18.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-18.html",
+      "slug": "ciencias-atividade-18",
+      "updatedAt": "2025-09-18T18:18:38.502108Z"
+    },
+    {
+      "id": 19,
+      "title": "19. Ciclo da água",
+      "eixo": "Geociências • Materiais e ciclos (EM13CNT501)",
+      "subject": "Ciências",
+      "summary": "Evaporação, condensação, precipitação e infiltração.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-19.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-19.html",
+      "slug": "ciencias-atividade-19",
+      "updatedAt": "2025-09-18T18:18:38.502111Z"
+    },
+    {
+      "id": 20,
+      "title": "20. Método científico (simplificado)",
+      "eixo": "Ciência e investigação (EM13CNT601)",
+      "subject": "Ciências",
+      "summary": "Observar, perguntar, testar e concluir.",
+      "filename": "public/atividades/ciencias/manifests/ciencias-atividade-20.html",
+      "route": "/atividades/ciencias/manifests/ciencias-atividade-20.html",
+      "slug": "ciencias-atividade-20",
+      "updatedAt": "2025-09-18T18:18:38.502114Z"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+<!-- CSS local desta atividade -->
+<style>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #111;
+      font-size: 12pt;
+    }
+    a:link:after,
+    a:visited:after {
+      content: "";
+    } /* não imprimir URLs dos links */
+  }
+  .calculator-display {
+    font-family: "Courier New", monospace;
+    background: #1f2937;
+    color: #10b981;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  /* cole aqui suas animações e estilos .combination-animation, .event-flow, .formula-highlight etc */
+</style>
+
+<div class="bg-gray-50 p-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <!-- Cole aqui o CONTEÚDO da atividade (o mesmo que você já tem), 
+         mas sem <!DOCTYPE>, <html>, <head>, <body>, sem Tailwind CDN e sem o script do Cloudflare. -->
+
+            <style>
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <!-- Cabeçalho -->
+        <div class="border-b-2 border-orange-500 pb-4 mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-orange-600">EduAdapta - Kit Matemática</h1>
+                    <h2 class="text-xl font-semibold text-gray-700">Atividade 3: Equação do 2º Grau</h2>
+                </div>
+                <div class="text-right text-sm text-gray-600">
+                    <p>Nome: _________________________</p>
+                    <p>Data: ___/___/______</p>
+                    <p>Tempo: 20 minutos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 mb-6">
+            <h3 class="font-bold text-orange-700 mb-2">🎯 Objetivo:</h3>
+            <p class="text-gray-700">Resolver equações do 2º grau usando a fórmula de Bhaskara</p>
+        </div>
+
+        <!-- Situação Problema -->
+        <div class="bg-blue-50 border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-bold text-blue-800 mb-4">🏀 Situação: Lançamento de Bola</h4>
+            <p class="text-gray-700 mb-4">
+                Pedro lança uma bola para cima. A altura da bola em metros, após t segundos, 
+                é dada pela equação: <strong>h(t) = -5t² + 20t + 1</strong>
+            </p>
+            
+            <div class="bg-white p-4 rounded border">
+                <h5 class="font-semibold mb-2">📐 Fórmula de Bhaskara:</h5>
+                <div class="text-center bg-yellow-100 p-4 rounded">
+                    <p class="text-lg font-bold mb-2">x = (-b ± √Δ) / 2a</p>
+                    <p class="text-sm">Onde: Δ = b² - 4ac</p>
+                    <p class="text-sm">Para ax² + bx + c = 0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercícios -->
+        <div class="space-y-6">
+            <!-- Parte 1 -->
+            <div class="border rounded-lg p-4 bg-gray-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📊 Parte 1: Identificando os Coeficientes</h4>
+                
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-4">Equação: h(t) = -5t² + 20t + 1</p>
+                    <p class="mb-4">Para encontrar quando a bola toca o chão, fazemos h(t) = 0:</p>
+                    <p class="text-center text-lg bg-blue-100 p-3 rounded mb-4">
+                        <strong>-5t² + 20t + 1 = 0</strong>
+                    </p>
+                    
+                    <div class="space-y-2">
+                        <p><strong>Identificando os coeficientes:</strong></p>
+                        <p>• a = ________ (coeficiente de t²)</p>
+                        <p>• b = ________ (coeficiente de t)</p>
+                        <p>• c = ________ (termo independente)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 2 -->
+            <div class="border rounded-lg p-4 bg-green-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🧮 Parte 2: Calculando o Discriminante</h4>
+                <div class="bg-white p-4 rounded border space-y-4">
+                    <div>
+                        <p class="font-semibold mb-2">Calculando Δ (Delta):</p>
+                        <p>Δ = b² - 4ac</p>
+                        <p>Δ = (______)² - 4 × (______) × (______)</p>
+                        <p>Δ = ________ - 4 × (______) × 1</p>
+                        <p>Δ = ________ - (______)</p>
+                        <p>Δ = ________ + ________</p>
+                        <p>Δ = ________</p>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-3 rounded">
+                        <p class="font-semibold">Interpretação do Δ:</p>
+                        <p>Como Δ = ________ > 0, a equação tem ________ soluções reais</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 3 -->
+            <div class="border rounded-lg p-4 bg-blue-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">⚡ Parte 3: Aplicando Bhaskara</h4>
+                <div class="bg-white p-4 rounded border space-y-4">
+                    <div>
+                        <p class="font-semibold mb-2">Calculando as raízes:</p>
+                        <p>x = (-b ± √Δ) / 2a</p>
+                        <p>t = (-(______) ± √______) / (2 × (______))</p>
+                        <p>t = (________ ± √______) / (______)</p>
+                        
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-green-100 p-3 rounded">
+                                <p class="font-semibold">Primeira solução (t₁):</p>
+                                <p>t₁ = (20 + √420) / (-10)</p>
+                                <p>t₁ = (20 + 20,5) / (-10)</p>
+                                <p>t₁ = ________ / (-10)</p>
+                                <p>t₁ = ________ segundos</p>
+                            </div>
+                            
+                            <div class="bg-blue-100 p-3 rounded">
+                                <p class="font-semibold">Segunda solução (t₂):</p>
+                                <p>t₂ = (20 - √420) / (-10)</p>
+                                <p>t₂ = (20 - 20,5) / (-10)</p>
+                                <p>t₂ = ________ / (-10)</p>
+                                <p>t₂ = ________ segundos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desafio -->
+            <div class="border rounded-lg p-4 bg-purple-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🏆 Desafio</h4>
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-2">🎯 Altura Máxima da Bola:</p>
+                    <p class="mb-3">
+                        Em que momento a bola atinge sua altura máxima?
+                    </p>
+                    
+                    <div class="space-y-2">
+                        <p><strong>Dica:</strong> O vértice da parábola ocorre em t = -b/2a</p>
+                        <p>t = -(______) / (2 × (______))</p>
+                        <p>t = ________ / ________</p>
+                        <p>t = ________ segundos</p>
+                        
+                        <p class="mt-3"><strong>Altura máxima:</strong></p>
+                        <p>h(____) = -5(______)² + 20(______) + 1</p>
+                        <p>h(____) = -5 × ________ + ________ + 1</p>
+                        <p>h(____) = ________ + ________ + 1</p>
+                        <p>h(____) = ________ metros</p>
+                        
+                        <div class="mt-4 bg-yellow-50 p-3 rounded">
+                            <p class="font-semibold">Interpretação:</p>
+                            <p>A bola atinge ________ metros de altura após ________ segundos</p>
+                            <p>A bola toca o chão após ________ segundos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Rodapé local da atividade (opcional; o viewer já tem botão de Imprimir) -->
+    <div class="no-print mt-6 flex gap-4 justify-center">
+      <button
+        onclick="window.print()"
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all"
+      >
+        🖨️ Imprimir
+      </button>
+      <a
+        href="/cliente/matematica"
+        class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-all"
+      >
+        ← Voltar
+      </a>
+    </div>
+  </div>
+</div>

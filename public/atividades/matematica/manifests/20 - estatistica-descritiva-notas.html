@@ -1,0 +1,825 @@
+<!-- CSS local desta atividade -->
+<style>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #111;
+      font-size: 12pt;
+    }
+    a:link:after,
+    a:visited:after {
+      content: "";
+    } /* não imprimir URLs dos links */
+  }
+  .calculator-display {
+    font-family: "Courier New", monospace;
+    background: #1f2937;
+    color: #10b981;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  /* cole aqui suas animações e estilos .combination-animation, .event-flow, .formula-highlight etc */
+</style>
+
+<div class="bg-gray-50 p-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <!-- Cole aqui o CONTEÚDO da atividade (o mesmo que você já tem), 
+         mas sem <!DOCTYPE>, <html>, <head>, <body>, sem Tailwind CDN e sem o script do Cloudflare. -->
+             <style>
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12pt; }
+        }
+        .chart-bar {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .chart-bar:hover {
+            opacity: 0.8;
+            transform: scaleY(1.05);
+        }
+        .stats-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        .grade-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .grade-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .calculator-display {
+            font-family: 'Courier New', monospace;
+            background: #1f2937;
+            color: #10b981;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .data-highlight {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .measure-animation {
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .histogram-bar {
+            background: linear-gradient(to top, #3b82f6, #60a5fa);
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s ease;
+        }
+        .histogram-bar:hover {
+            background: linear-gradient(to top, #2563eb, #3b82f6);
+        }
+        .boxplot-element {
+            stroke: #374151;
+            stroke-width: 2;
+            fill: none;
+        }
+        .boxplot-median {
+            stroke: #ef4444;
+            stroke-width: 3;
+        }
+        .boxplot-quartile {
+            fill: #60a5fa;
+            stroke: #3b82f6;
+            stroke-width: 2;
+        }
+        .scatter-point {
+            fill: #8b5cf6;
+            stroke: #7c3aed;
+            stroke-width: 1;
+            transition: all 0.3s ease;
+        }
+        .scatter-point:hover {
+            fill: #a855f7;
+            r: 6;
+        }
+        .formula-highlight {
+            animation: glow 2s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <!-- Cabeçalho -->
+        <div class="border-b-2 border-blue-500 pb-4 mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-blue-600">EduAdapta - Kit Matemática</h1>
+                    <h2 class="text-xl font-semibold text-gray-700">Atividade 20: Estatística Descritiva - Análise de Notas Escolares</h2>
+                </div>
+                <div class="text-right text-sm text-gray-600">
+                    <p>Nome: _________________________</p>
+                    <p>Data: ___/___/______</p>
+                    <p>Tempo: 60 minutos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+            <h3 class="font-bold text-blue-700 mb-2">🎯 Objetivo:</h3>
+            <p class="text-gray-700">Aprender estatística descritiva analisando dados reais de desempenho escolar</p>
+        </div>
+
+        <!-- Situação Problema -->
+        <div class="bg-green-50 border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-bold text-green-800 mb-4">📊 Situação: Análise do Desempenho da Turma 9º B</h4>
+            <p class="text-gray-700 mb-4">
+                A professora Ana precisa analisar as notas da turma para entender o desempenho dos alunos 
+                e planejar estratégias de ensino. Vamos usar estatística descritiva para essa análise!
+            </p>
+            
+            <div class="bg-white p-4 rounded border">
+                <h5 class="font-semibold mb-2">📚 Conceitos de Estatística Descritiva:</h5>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-blue-100 p-4 rounded">
+                        <p class="font-bold mb-2">MEDIDAS DE TENDÊNCIA CENTRAL</p>
+                        <div class="bg-white p-3 rounded text-sm">
+                            <p><strong>Média:</strong> Soma ÷ Quantidade</p>
+                            <p><strong>Mediana:</strong> Valor central</p>
+                            <p><strong>Moda:</strong> Valor mais frequente</p>
+                        </div>
+                    </div>
+                    <div class="bg-purple-100 p-4 rounded">
+                        <p class="font-bold mb-2">MEDIDAS DE DISPERSÃO</p>
+                        <div class="bg-white p-3 rounded text-sm">
+                            <p><strong>Amplitude:</strong> Maior - Menor</p>
+                            <p><strong>Variância:</strong> Dispersão média</p>
+                            <p><strong>Desvio Padrão:</strong> √Variância</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 bg-yellow-100 p-3 rounded text-center">
+                    <p class="font-semibold">💡 A estatística descritiva resume e organiza dados para facilitar a compreensão!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dados da Turma -->
+        <div class="bg-gray-100 p-6 rounded-lg mb-6">
+            <h4 class="text-lg font-bold text-gray-800 mb-4">📋 Dados: Notas da Prova de Matemática - Turma 9º B</h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-4 rounded border">
+                    <h5 class="font-semibold mb-3">👥 Lista de Alunos e Notas (0-10):</h5>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Ana: <span class="font-bold">8.5</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Bruno: <span class="font-bold">7.2</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Carlos: <span class="font-bold">9.1</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Diana: <span class="font-bold">6.8</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Eduardo: <span class="font-bold">7.5</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Fernanda: <span class="font-bold">8.9</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Gabriel: <span class="font-bold">5.4</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Helena: <span class="font-bold">9.3</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Igor: <span class="font-bold">6.1</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Julia: <span class="font-bold">8.7</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Kevin: <span class="font-bold">7.8</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Laura: <span class="font-bold">9.0</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Marcos: <span class="font-bold">4.9</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Natália: <span class="font-bold">8.2</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Otávio: <span class="font-bold">7.0</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Paula: <span class="font-bold">8.8</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Rafael: <span class="font-bold">6.5</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Sofia: <span class="font-bold">9.2</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Thiago: <span class="font-bold">5.8</span></div>
+                        <div class="grade-card bg-blue-50 p-2 rounded border">Vitória: <span class="font-bold">8.4</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 rounded border">
+                    <h5 class="font-semibold mb-3">📊 Dados Organizados:</h5>
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-bold mb-2">Total de alunos: ________ estudantes</p>
+                            <p class="text-sm">Conte quantos alunos fizeram a prova</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-bold mb-2">Dados em ordem crescente:</p>
+                            <div class="grid grid-cols-5 gap-1 text-sm">
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                                <div class="bg-white p-1 rounded border text-center">____</div>
+                            </div>
+                            <p class="text-xs mt-2 text-gray-600">Organize as notas da menor para a maior</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercícios -->
+        <div class="space-y-6">
+            <!-- Parte 1 -->
+            <div class="border rounded-lg p-4 bg-blue-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📊 Parte 1: Medidas de Tendência Central</h4>
+                
+                <div class="space-y-4">
+                    <!-- Média -->
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-blue-700 mb-3">🎯 Calculando a Média Aritmética</h5>
+                        
+                        <div class="formula-highlight bg-blue-100 p-4 rounded mb-4">
+                            <p class="text-center text-lg font-bold">Média = Soma de todos os valores ÷ Quantidade de valores</p>
+                            <p class="text-center text-lg">x̄ = (x₁ + x₂ + ... + xₙ) ÷ n</p>
+                        </div>
+                        
+                        <div class="measure-animation space-y-3">
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Passo 1: Somar todas as notas</p>
+                                <div class="calculator-display mb-2">
+                                    8.5 + 7.2 + 9.1 + 6.8 + 7.5 + 8.9 + 5.4 + 9.3 + 6.1 + 8.7 + 7.8 + 9.0 + 4.9 + 8.2 + 7.0 + 8.8 + 6.5 + 9.2 + 5.8 + 8.4
+                                </div>
+                                <p class="text-center">Soma total = ________ pontos</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Passo 2: Dividir pela quantidade de alunos</p>
+                                <p class="text-center text-lg">Média = ________ ÷ ________ = ________ pontos</p>
+                            </div>
+                            
+                            <div class="bg-green-100 p-3 rounded text-center">
+                                <p class="font-bold text-green-700">A média da turma é: ________ pontos</p>
+                                <p class="text-sm mt-2">Isso significa que, em média, os alunos tiraram essa nota</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mediana -->
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-purple-700 mb-3">🎯 Calculando a Mediana</h5>
+                        
+                        <div class="bg-purple-100 p-4 rounded mb-4">
+                            <p class="text-center text-lg font-bold">Mediana = Valor que divide os dados ao meio</p>
+                            <p class="text-center text-sm">50% dos valores ficam abaixo e 50% acima da mediana</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Passo 1: Dados já organizados em ordem crescente</p>
+                                <p class="text-sm">Use os dados que você organizou anteriormente</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Passo 2: Encontrar a posição central</p>
+                                <p class="text-sm mb-2">Com 20 alunos (número par), a mediana é a média entre as posições 10ª e 11ª</p>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white p-2 rounded border text-center">
+                                        <p class="text-sm">10ª posição:</p>
+                                        <p class="font-bold">________ pontos</p>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border text-center">
+                                        <p class="text-sm">11ª posição:</p>
+                                        <p class="font-bold">________ pontos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Passo 3: Calcular a mediana</p>
+                                <p class="text-center text-lg">Mediana = (________ + ________) ÷ 2 = ________ pontos</p>
+                            </div>
+                            
+                            <div class="bg-purple-100 p-3 rounded text-center">
+                                <p class="font-bold text-purple-700">A mediana da turma é: ________ pontos</p>
+                                <p class="text-sm mt-2">Metade dos alunos tirou nota acima deste valor</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Moda -->
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-green-700 mb-3">🎯 Identificando a Moda</h5>
+                        
+                        <div class="bg-green-100 p-4 rounded mb-4">
+                            <p class="text-center text-lg font-bold">Moda = Valor que aparece com maior frequência</p>
+                            <p class="text-center text-sm">Pode não existir, ser única ou múltipla</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Tabela de Frequências:</p>
+                                <div class="grid grid-cols-2 gap-2 text-sm">
+                                    <div class="bg-white p-2 rounded border">4.9: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">5.4: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">5.8: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">6.1: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">6.5: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">6.8: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">7.0: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">7.2: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">7.5: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">7.8: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">8.2: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">8.4: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">8.5: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">8.7: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">8.8: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">8.9: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">9.0: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">9.1: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">9.2: _____ vez(es)</div>
+                                    <div class="bg-white p-2 rounded border">9.3: _____ vez(es)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-green-100 p-3 rounded text-center">
+                                <p class="font-bold text-green-700">A moda da turma é: ________________</p>
+                                <p class="text-sm mt-2">
+                                    □ Não existe moda (amodal) - todos os valores aparecem com a mesma frequência<br>
+                                    □ Existe uma moda (unimodal) - um valor aparece mais vezes<br>
+                                    □ Existem várias modas (multimodal) - vários valores aparecem com a maior frequência
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comparação -->
+                    <div class="bg-yellow-100 p-4 rounded">
+                        <h5 class="font-semibold text-yellow-700 mb-3">📊 Comparando as Medidas</h5>
+                        <table class="w-full border-collapse border border-gray-400">
+                            <thead>
+                                <tr class="bg-gray-200">
+                                    <th class="border border-gray-400 p-2">Medida</th>
+                                    <th class="border border-gray-400 p-2">Valor</th>
+                                    <th class="border border-gray-400 p-2">Interpretação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-400 p-2 font-bold">Média</td>
+                                    <td class="border border-gray-400 p-2 text-center">____</td>
+                                    <td class="border border-gray-400 p-2">Nota típica da turma</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-400 p-2 font-bold">Mediana</td>
+                                    <td class="border border-gray-400 p-2 text-center">____</td>
+                                    <td class="border border-gray-400 p-2">Divide a turma ao meio</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-400 p-2 font-bold">Moda</td>
+                                    <td class="border border-gray-400 p-2 text-center">____</td>
+                                    <td class="border border-gray-400 p-2">Nota mais comum</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 2 -->
+            <div class="border rounded-lg p-4 bg-purple-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📏 Parte 2: Medidas de Dispersão</h4>
+                
+                <div class="space-y-4">
+                    <!-- Amplitude -->
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-red-700 mb-3">📐 Calculando a Amplitude</h5>
+                        
+                        <div class="bg-red-100 p-4 rounded mb-4">
+                            <p class="text-center text-lg font-bold">Amplitude = Maior valor - Menor valor</p>
+                            <p class="text-center text-sm">Mostra a diferença entre os extremos</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-3 rounded text-center">
+                                    <p class="font-bold mb-2">Maior nota:</p>
+                                    <p class="text-2xl font-bold text-green-600">________ pontos</p>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded text-center">
+                                    <p class="font-bold mb-2">Menor nota:</p>
+                                    <p class="text-2xl font-bold text-red-600">________ pontos</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-red-100 p-3 rounded text-center">
+                                <p class="text-lg">Amplitude = ________ - ________ = ________ pontos</p>
+                                <p class="font-bold text-red-700 mt-2">A amplitude da turma é: ________ pontos</p>
+                                <p class="text-sm mt-2">Isso mostra a variação total das notas</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quartis -->
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-blue-700 mb-3">📊 Calculando os Quartis</h5>
+                        
+                        <div class="bg-blue-100 p-4 rounded mb-4">
+                            <p class="text-center text-lg font-bold">Quartis dividem os dados em 4 partes iguais</p>
+                            <p class="text-center text-sm">Q1 (25%), Q2 (50% = mediana), Q3 (75%)</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Com 20 dados ordenados:</p>
+                                <div class="grid grid-cols-3 gap-4">
+                                    <div class="bg-white p-3 rounded border text-center">
+                                        <p class="font-bold mb-1">Q1 (1º Quartil)</p>
+                                        <p class="text-sm mb-2">Posição: 5ª e 6ª</p>
+                                        <p class="text-sm">Valores: ____ e ____</p>
+                                        <p class="font-bold">Q1 = ____</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border text-center">
+                                        <p class="font-bold mb-1">Q2 (2º Quartil)</p>
+                                        <p class="text-sm mb-2">= Mediana</p>
+                                        <p class="font-bold">Q2 = ____</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border text-center">
+                                        <p class="font-bold mb-1">Q3 (3º Quartil)</p>
+                                        <p class="text-sm mb-2">Posição: 15ª e 16ª</p>
+                                        <p class="text-sm">Valores: ____ e ____</p>
+                                        <p class="font-bold">Q3 = ____</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-100 p-3 rounded">
+                                <p class="font-bold mb-2">Amplitude Interquartil (AIQ):</p>
+                                <p class="text-center text-lg">AIQ = Q3 - Q1 = ________ - ________ = ________ pontos</p>
+                                <p class="text-sm text-center mt-2">Mostra a dispersão dos 50% centrais dos dados</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Variância e Desvio Padrão -->
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-purple-700 mb-3">📊 Variância e Desvio Padrão</h5>
+                        
+                        <div class="bg-purple-100 p-4 rounded mb-4">
+                            <p class="text-center text-lg font-bold">Variância = Média dos quadrados dos desvios</p>
+                            <p class="text-center text-lg font-bold">Desvio Padrão = √Variância</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Exemplo de cálculo (primeiros 5 alunos):</p>
+                                <table class="w-full border-collapse border border-gray-400 text-sm">
+                                    <thead>
+                                        <tr class="bg-gray-200">
+                                            <th class="border border-gray-400 p-1">Aluno</th>
+                                            <th class="border border-gray-400 p-1">Nota (x)</th>
+                                            <th class="border border-gray-400 p-1">x - x̄</th>
+                                            <th class="border border-gray-400 p-1">(x - x̄)²</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border border-gray-400 p-1">Ana</td>
+                                            <td class="border border-gray-400 p-1 text-center">8.5</td>
+                                            <td class="border border-gray-400 p-1 text-center">8.5 - ____ = ____</td>
+                                            <td class="border border-gray-400 p-1 text-center">____</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-1">Bruno</td>
+                                            <td class="border border-gray-400 p-1 text-center">7.2</td>
+                                            <td class="border border-gray-400 p-1 text-center">7.2 - ____ = ____</td>
+                                            <td class="border border-gray-400 p-1 text-center">____</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-1">Carlos</td>
+                                            <td class="border border-gray-400 p-1 text-center">9.1</td>
+                                            <td class="border border-gray-400 p-1 text-center">9.1 - ____ = ____</td>
+                                            <td class="border border-gray-400 p-1 text-center">____</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-1">Diana</td>
+                                            <td class="border border-gray-400 p-1 text-center">6.8</td>
+                                            <td class="border border-gray-400 p-1 text-center">6.8 - ____ = ____</td>
+                                            <td class="border border-gray-400 p-1 text-center">____</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-1">Eduardo</td>
+                                            <td class="border border-gray-400 p-1 text-center">7.5</td>
+                                            <td class="border border-gray-400 p-1 text-center">7.5 - ____ = ____</td>
+                                            <td class="border border-gray-400 p-1 text-center">____</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="bg-purple-100 p-3 rounded">
+                                <p class="font-bold mb-2">Cálculo simplificado (usando calculadora):</p>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white p-3 rounded border text-center">
+                                        <p class="font-bold mb-1">Variância</p>
+                                        <p class="text-sm">σ² ≈ ________ pontos²</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border text-center">
+                                        <p class="font-bold mb-1">Desvio Padrão</p>
+                                        <p class="text-sm">σ ≈ ________ pontos</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-center mt-2">O desvio padrão mostra o quanto as notas se afastam da média</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 3 -->
+            <div class="border rounded-lg p-4 bg-green-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📈 Parte 3: Representações Gráficas</h4>
+                
+                <div class="space-y-4">
+                    <!-- Histograma -->
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-green-700 mb-3">📊 Construindo um Histograma</h5>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Agrupamento por faixas de notas:</p>
+                                <table class="w-full border-collapse border border-gray-400 text-sm">
+                                    <thead>
+                                        <tr class="bg-gray-200">
+                                            <th class="border border-gray-400 p-2">Faixa de Notas</th>
+                                            <th class="border border-gray-400 p-2">Frequência</th>
+                                            <th class="border border-gray-400 p-2">Alunos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border border-gray-400 p-2">4.0 ├ 5.0</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-2">5.0 ├ 6.0</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-2">6.0 ├ 7.0</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-2">7.0 ├ 8.0</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-2">8.0 ├ 9.0</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-2">9.0 ├ 10.0</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                            <td class="border border-gray-400 p-2 text-center">____</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Desenhe o histograma:</p>
+                                <div class="bg-white border-2 border-gray-300 p-4" style="height: 300px;">
+                                    <div class="h-full flex items-end justify-around">
+                                        <div class="flex flex-col items-center">
+                                            <div class="histogram-bar w-12 bg-blue-500" style="height: 0px;" title="4.0-5.0"></div>
+                                            <p class="text-xs mt-1">4-5</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div class="histogram-bar w-12 bg-blue-500" style="height: 0px;" title="5.0-6.0"></div>
+                                            <p class="text-xs mt-1">5-6</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div class="histogram-bar w-12 bg-blue-500" style="height: 0px;" title="6.0-7.0"></div>
+                                            <p class="text-xs mt-1">6-7</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div class="histogram-bar w-12 bg-blue-500" style="height: 0px;" title="7.0-8.0"></div>
+                                            <p class="text-xs mt-1">7-8</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div class="histogram-bar w-12 bg-blue-500" style="height: 0px;" title="8.0-9.0"></div>
+                                            <p class="text-xs mt-1">8-9</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div class="histogram-bar w-12 bg-blue-500" style="height: 0px;" title="9.0-10.0"></div>
+                                            <p class="text-xs mt-1">9-10</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-center mt-2">Desenhe as barras proporcionais às frequências</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Box Plot -->
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-blue-700 mb-3">📦 Construindo um Box Plot (Diagrama de Caixa)</h5>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Valores necessários:</p>
+                                <div class="grid grid-cols-5 gap-2 text-sm">
+                                    <div class="bg-white p-2 rounded border text-center">
+                                        <p class="font-bold">Mínimo</p>
+                                        <p>____</p>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border text-center">
+                                        <p class="font-bold">Q1</p>
+                                        <p>____</p>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border text-center">
+                                        <p class="font-bold">Mediana</p>
+                                        <p>____</p>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border text-center">
+                                        <p class="font-bold">Q3</p>
+                                        <p>____</p>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border text-center">
+                                        <p class="font-bold">Máximo</p>
+                                        <p>____</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Desenhe o box plot:</p>
+                                <div class="bg-white border-2 border-gray-300 p-4" style="height: 150px;">
+                                    <svg width="100%" height="100%" viewBox="0 0 400 100">
+                                        <!-- Escala -->
+                                        <line x1="50" y1="80" x2="350" y2="80" class="boxplot-element"/>
+                                        <text x="50" y="95" text-anchor="middle" class="text-xs">4</text>
+                                        <text x="110" y="95" text-anchor="middle" class="text-xs">5</text>
+                                        <text x="170" y="95" text-anchor="middle" class="text-xs">6</text>
+                                        <text x="230" y="95" text-anchor="middle" class="text-xs">7</text>
+                                        <text x="290" y="95" text-anchor="middle" class="text-xs">8</text>
+                                        <text x="350" y="95" text-anchor="middle" class="text-xs">9</text>
+                                        
+                                        <!-- Desenhe aqui o box plot -->
+                                        <text x="200" y="30" text-anchor="middle" class="text-sm">Complete o diagrama com os valores calculados</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Análise Final -->
+            <div class="border rounded-lg p-4 bg-yellow-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🔍 Análise e Interpretação dos Resultados</h4>
+                
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-orange-700 mb-3">📊 Resumo Estatístico da Turma</h5>
+                        
+                        <table class="w-full border-collapse border border-gray-400">
+                            <thead>
+                                <tr class="bg-gray-200">
+                                    <th class="border border-gray-400 p-2">Medida Estatística</th>
+                                    <th class="border border-gray-400 p-2">Valor</th>
+                                    <th class="border border-gray-400 p-2">Interpretação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-400 p-2 font-bold">Média</td>
+                                    <td class="border border-gray-400 p-2 text-center">____</td>
+                                    <td class="border border-gray-400 p-2">Desempenho médio da turma</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-400 p-2 font-bold">Mediana</td>
+                                    <td class="border border-gray-400 p-2 text-center">____</td>
+                                    <td class="border border-gray-400 p-2">50% dos alunos ficaram abaixo</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-400 p-2 font-bold">Moda</td>
+                                    <td class="border border-gray-400 p-2 text-center">____</td>
+                                    <td class="border border-gray-400 p-2">Nota mais frequente</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-400 p-2 font-bold">Amplitude</td>
+                                    <td class="border border-gray-400 p-2 text-center">____</td>
+                                    <td class="border border-gray-400 p-2">Variação total das notas</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-400 p-2 font-bold">Desvio Padrão</td>
+                                    <td class="border border-gray-400 p-2 text-center">____</td>
+                                    <td class="border border-gray-400 p-2">Dispersão em relação à média</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold text-blue-700 mb-3">🎯 Questões de Análise</h5>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-3 rounded">
+                                <p class="font-bold mb-2">1. Análise do desempenho geral:</p>
+                                <p class="text-sm mb-2">a) A turma teve um bom desempenho? Justifique com base na média.</p>
+                                <p class="text-sm">________________________________________________</p>
+                                <p class="text-sm">________________________________________________</p>
+                                
+                                <p class="text-sm mb-2 mt-3">b) Quantos alunos ficaram acima da média?</p>
+                                <p class="text-sm">Resposta: ________ alunos</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-3 rounded">
+                                <p class="font-bold mb-2">2. Análise da dispersão:</p>
+                                <p class="text-sm mb-2">a) As notas estão muito espalhadas? Use a amplitude para justificar.</p>
+                                <p class="text-sm">________________________________________________</p>
+                                <p class="text-sm">________________________________________________</p>
+                                
+                                <p class="text-sm mb-2 mt-3">b) O que o desvio padrão nos diz sobre a homogeneidade da turma?</p>
+                                <p class="text-sm">________________________________________________</p>
+                                <p class="text-sm">________________________________________________</p>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-3 rounded">
+                                <p class="font-bold mb-2">3. Comparação das medidas centrais:</p>
+                                <p class="text-sm mb-2">a) A média e a mediana são próximas? O que isso indica?</p>
+                                <p class="text-sm">________________________________________________</p>
+                                <p class="text-sm">________________________________________________</p>
+                                
+                                <p class="text-sm mb-2 mt-3">b) Qual medida representa melhor o desempenho da turma? Por quê?</p>
+                                <p class="text-sm">________________________________________________</p>
+                                <p class="text-sm">________________________________________________</p>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-3 rounded">
+                                <p class="font-bold mb-2">4. Recomendações pedagógicas:</p>
+                                <p class="text-sm mb-2">Com base na análise estatística, que estratégias a professora Ana poderia adotar?</p>
+                                <p class="text-sm">________________________________________________</p>
+                                <p class="text-sm">________________________________________________</p>
+                                <p class="text-sm">________________________________________________</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-orange-100 p-4 rounded text-center">
+                        <p class="font-bold text-orange-700 text-lg">
+                            🎓 A estatística descritiva transforma números em informações úteis para a educação!
+                        </p>
+                        <p class="text-sm mt-2">
+                            Através da análise estatística, podemos compreender melhor o desempenho dos alunos 
+                            e tomar decisões pedagógicas mais fundamentadas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Rodapé local da atividade (opcional; o viewer já tem botão de Imprimir) -->
+    <div class="no-print mt-6 flex gap-4 justify-center">
+      <button
+        onclick="window.print()"
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all"
+      >
+        🖨️ Imprimir
+      </button>
+      <a
+        href="/cliente/matematica"
+        class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-all"
+      >
+        ← Voltar
+      </a>
+    </div>
+  </div>
+</div>

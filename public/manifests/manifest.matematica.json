@@ -1,0 +1,125 @@
+{
+  "kit": "matematica",
+  "atividades": [
+    {
+      "codigo": "M01",
+      "titulo": "Consumo de Combustível — Função Linear",
+      "href": "/atividades/matematica/01-combustivel-funcao-linear.html",
+      "descricao": "Modelagem de gasto por distância."
+    },
+    {
+      "codigo": "M02",
+      "titulo": "Gráfico — Interpretação de Dados",
+      "href": "/atividades/matematica/02-grafico-interpretacao-dados.html",
+      "descricao": "Leitura de gráficos e tabelas."
+    },
+    {
+      "codigo": "M03",
+      "titulo": "Equação do Segundo Grau",
+      "href": "/atividades/matematica/03-equacao-segundo-grau.html",
+      "descricao": "Raízes, vértice e discriminante."
+    },
+    {
+      "codigo": "M04",
+      "titulo": "Sistema Linear — Vendas",
+      "href": "/atividades/matematica/04-sistema-linear-vendas.html",
+      "descricao": "Resolução de sistemas 2×2."
+    },
+    {
+      "codigo": "M05",
+      "titulo": "Inequações — Orçamento",
+      "href": "/atividades/matematica/05-inequacao-orcamento.html",
+      "descricao": "Restrições e região solução."
+    },
+    {
+      "codigo": "M06",
+      "titulo": "Área e Perímetro — Terreno",
+      "href": "/atividades/matematica/06-area-perimetro-terreno.html",
+      "descricao": "Medidas em figuras planas."
+    },
+    {
+      "codigo": "M07",
+      "titulo": "Volume do Cilindro — Reservatório",
+      "href": "/atividades/matematica/07-volume-cilindro-reservatorio.html",
+      "descricao": "Cálculo de capacidade."
+    },
+    {
+      "codigo": "M08",
+      "titulo": "Teorema de Pitágoras — Distância",
+      "href": "/atividades/matematica/08-teorema-pitagoras-distancia.html",
+      "descricao": "Aplicações no plano."
+    },
+    {
+      "codigo": "M09",
+      "titulo": "Trigonometria — Rampa",
+      "href": "/atividades/matematica/09-trigonometria-rampa.html",
+      "descricao": "Seno, cosseno e tangente."
+    },
+    {
+      "codigo": "M10",
+      "titulo": "Circunferência — Pista de Corrida",
+      "href": "/atividades/matematica/10-circunferencia-pista-corrida.html",
+      "descricao": "Comprimento e relação com π."
+    },
+    {
+      "codigo": "M11",
+      "titulo": "Porcentagem — Desconto",
+      "href": "/atividades/matematica/11-porcentagem-desconto.html",
+      "descricao": "Descontos sequenciais."
+    },
+    {
+      "codigo": "M12",
+      "titulo": "Juros Compostos — Investimento",
+      "href": "/atividades/matematica/12-juros-compostos-investimento.html",
+      "descricao": "Crescimento exponencial."
+    },
+    {
+      "codigo": "M13",
+      "titulo": "Regra de Três — Produção",
+      "href": "/atividades/matematica/13-regra-tres-producao.html",
+      "descricao": "Proporcionalidade simples/composta."
+    },
+    {
+      "codigo": "M14",
+      "titulo": "Média de Notas — Aprovação",
+      "href": "/atividades/matematica/14-media-notas-aprovacao.html",
+      "descricao": "Média aritmética e ponderada."
+    },
+    {
+      "codigo": "M15",
+      "titulo": "Probabilidade — Sorteio",
+      "href": "/atividades/matematica/15-probabilidade-sorteio.html",
+      "descricao": "Eventos simples e compostos."
+    },
+    {
+      "codigo": "M16",
+      "titulo": "Progressão Aritmética — Poupança",
+      "href": "/atividades/matematica/16-progressao-aritmetica-poupanca.html",
+      "descricao": "Termo geral e soma."
+    },
+    {
+      "codigo": "M17",
+      "titulo": "Logaritmos — Escala pH",
+      "href": "/atividades/matematica/17-logaritmos-escala-ph.html",
+      "descricao": "Mudança de base e aplicações."
+    },
+    {
+      "codigo": "M18",
+      "titulo": "Matrizes — Controle de Estoque",
+      "href": "/atividades/matematica/18-matrizes-controle-estoque.html",
+      "descricao": "Operações básicas com matrizes."
+    },
+    {
+      "codigo": "M19",
+      "titulo": "Análise Combinatória — Eventos",
+      "href": "/atividades/matematica/19-analise-combinatoria-eventos.html",
+      "descricao": "Permutações, arranjos e combinações."
+    },
+    {
+      "codigo": "M20",
+      "titulo": "Estatística Descritiva — Notas",
+      "href": "/atividades/matematica/20-estatistica-descritiva-notas.html",
+      "descricao": "Medidas de tendência e dispersão."
+    }
+  ]
+}

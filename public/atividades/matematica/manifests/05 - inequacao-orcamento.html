@@ -1,0 +1,226 @@
+<!-- CSS local desta atividade -->
+<style>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #111;
+      font-size: 12pt;
+    }
+    a:link:after,
+    a:visited:after {
+      content: "";
+    } /* não imprimir URLs dos links */
+  }
+  .calculator-display {
+    font-family: "Courier New", monospace;
+    background: #1f2937;
+    color: #10b981;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  /* cole aqui suas animações e estilos .combination-animation, .event-flow, .formula-highlight etc */
+</style>
+
+<div class="bg-gray-50 p-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <!-- Cole aqui o CONTEÚDO da atividade (o mesmo que você já tem), 
+         mas sem <!DOCTYPE>, <html>, <head>, <body>, sem Tailwind CDN e sem o script do Cloudflare. -->
+
+            <style>
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <!-- Cabeçalho -->
+        <div class="border-b-2 border-orange-500 pb-4 mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-orange-600">EduAdapta - Kit Matemática</h1>
+                    <h2 class="text-xl font-semibold text-gray-700">Atividade 5: Inequação</h2>
+                </div>
+                <div class="text-right text-sm text-gray-600">
+                    <p>Nome: _________________________</p>
+                    <p>Data: ___/___/______</p>
+                    <p>Tempo: 20 minutos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 mb-6">
+            <h3 class="font-bold text-orange-700 mb-2">🎯 Objetivo:</h3>
+            <p class="text-gray-700">Resolver inequações lineares e interpretar o conjunto solução</p>
+        </div>
+
+        <!-- Situação Problema -->
+        <div class="bg-blue-50 border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-bold text-blue-800 mb-4">💰 Situação: Orçamento Familiar</h4>
+            <p class="text-gray-700 mb-4">
+                A família Silva tem R$ 800,00 para gastos mensais. Eles gastam R$ 300,00 fixos 
+                (água, luz, internet) e querem saber quantos reais podem gastar com alimentação 
+                para não ultrapassar o orçamento.
+            </p>
+            
+            <div class="bg-white p-4 rounded border">
+                <h5 class="font-semibold mb-2">🔍 Símbolos de Inequação:</h5>
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div class="bg-yellow-100 p-3 rounded">
+                        <p><strong>&lt;</strong> menor que</p>
+                        <p><strong>&le;</strong> menor ou igual</p>
+                    </div>
+                    <div class="bg-green-100 p-3 rounded">
+                        <p><strong>&gt;</strong> maior que</p>
+                        <p><strong>&ge;</strong> maior ou igual</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercícios -->
+        <div class="space-y-6">
+            <!-- Parte 1 -->
+            <div class="border rounded-lg p-4 bg-gray-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📊 Parte 1: Montando a Inequação</h4>
+                
+                <div class="bg-white p-4 rounded border">
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold mb-2">Definindo a variável:</p>
+                            <p><strong>x</strong> = valor gasto com alimentação (em reais)</p>
+                        </div>
+                        
+                        <div>
+                            <p class="font-semibold mb-2">Analisando a situação:</p>
+                            <p>• Gastos fixos: R$ 300,00</p>
+                            <p>• Gastos com alimentação: R$ x</p>
+                            <p>• Orçamento total: R$ 800,00</p>
+                            <p>• Condição: Total de gastos ≤ Orçamento</p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded">
+                            <p class="font-semibold mb-2">Inequação:</p>
+                            <p>Gastos fixos + Alimentação ≤ Orçamento</p>
+                            <p class="text-lg text-center">
+                                ________ + x ≤ ________
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 2 -->
+            <div class="border rounded-lg p-4 bg-green-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🧮 Parte 2: Resolvendo a Inequação</h4>
+                <div class="bg-white p-4 rounded border space-y-4">
+                    <div>
+                        <p class="font-semibold mb-2">Passo a passo:</p>
+                        <p>300 + x ≤ 800</p>
+                        <p>x ≤ 800 - 300</p>
+                        <p>x ≤ ________</p>
+                    </div>
+                    
+                    <div class="bg-blue-100 p-3 rounded">
+                        <p class="font-semibold">Conjunto Solução:</p>
+                        <p>S = {x ∈ ℝ | x ≤ ________}</p>
+                        <p>ou</p>
+                        <p>S = ]-∞, ________]</p>
+                    </div>
+                    
+                    <div>
+                        <p class="font-semibold mb-2">Interpretação:</p>
+                        <p>A família pode gastar <strong>no máximo R$ ________</strong> com alimentação.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 3 -->
+            <div class="border rounded-lg p-4 bg-blue-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📈 Parte 3: Representação na Reta</h4>
+                <div class="bg-white p-4 rounded border space-y-4">
+                    <div>
+                        <p class="font-semibold mb-4">Complete a reta numérica:</p>
+                        
+                        <!-- Reta numérica -->
+                        <div class="relative my-8">
+                            <div class="flex justify-between items-center border-b-2 border-gray-400 pb-2">
+                                <span class="text-sm">0</span>
+                                <span class="text-sm">100</span>
+                                <span class="text-sm">200</span>
+                                <span class="text-sm">300</span>
+                                <span class="text-sm">400</span>
+                                <span class="text-sm">500</span>
+                                <span class="text-sm">600</span>
+                            </div>
+                            
+                            <div class="mt-4 space-y-2">
+                                <p>1. Marque o ponto ________ na reta</p>
+                                <p>2. Como é "menor ou igual", use bolinha ________ (fechada/aberta)</p>
+                                <p>3. Sombreie a região à ________ (esquerda/direita) do ponto</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-3 rounded">
+                        <p class="font-semibold">Verificação:</p>
+                        <p>• Se x = 400: 300 + 400 = ________ ≤ 800? ________ (Sim/Não)</p>
+                        <p>• Se x = 600: 300 + 600 = ________ ≤ 800? ________ (Sim/Não)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desafio -->
+            <div class="border rounded-lg p-4 bg-purple-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🏆 Desafio</h4>
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-2">🎯 Nova Situação:</p>
+                    <p class="mb-3">
+                        A família quer economizar pelo menos R$ 100,00 por mês. 
+                        Qual deve ser o gasto máximo com alimentação agora?
+                    </p>
+                    
+                    <div class="space-y-2">
+                        <p><strong>Nova condição:</strong></p>
+                        <p>Orçamento - Gastos ≥ Economia desejada</p>
+                        <p>800 - (300 + x) ≥ 100</p>
+                        <p>800 - 300 - x ≥ 100</p>
+                        <p>________ - x ≥ 100</p>
+                        <p>-x ≥ 100 - ________</p>
+                        <p>-x ≥ ________</p>
+                        <p>x ≤ ________ (multiplicando por -1, inverte o sinal)</p>
+                        
+                        <div class="mt-4 bg-yellow-50 p-3 rounded">
+                            <p class="font-semibold">Resposta:</p>
+                            <p>Para economizar R$ 100,00, podem gastar no máximo R$ ________ com alimentação.</p>
+                            <p>Diferença em relação ao caso anterior: R$ ________ - R$ ________ = R$ ________</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Rodapé local da atividade (opcional; o viewer já tem botão de Imprimir) -->
+    <div class="no-print mt-6 flex gap-4 justify-center">
+      <button
+        onclick="window.print()"
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all"
+      >
+        🖨️ Imprimir
+      </button>
+      <a
+        href="/cliente/matematica"
+        class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-all"
+      >
+        ← Voltar
+      </a>
+    </div>
+  </div>
+</div>

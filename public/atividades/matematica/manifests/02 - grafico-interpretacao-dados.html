@@ -1,0 +1,419 @@
+<!-- CSS local desta atividade -->
+<style>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #111;
+      font-size: 12pt;
+    }
+    a:link:after,
+    a:visited:after {
+      content: "";
+    } /* não imprimir URLs dos links */
+  }
+  .calculator-display {
+    font-family: "Courier New", monospace;
+    background: #1f2937;
+    color: #10b981;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  /* cole aqui suas animações e estilos .combination-animation, .event-flow, .formula-highlight etc */
+</style>
+
+<div class="bg-gray-50 p-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <!-- Cole aqui o CONTEÚDO da atividade (o mesmo que você já tem), 
+         mas sem <!DOCTYPE>, <html>, <head>, <body>, sem Tailwind CDN e sem o script do Cloudflare. -->
+            <style>
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <!-- Cabeçalho -->
+        <div class="border-b-2 border-orange-500 pb-4 mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-orange-600">EduAdapta - Kit Matemática</h1>
+                    <h2 class="text-xl font-semibold text-gray-700">Atividade 2: Gráfico Simples</h2>
+                </div>
+                <div class="text-right text-sm text-gray-600">
+                    <p>Nome: _________________________</p>
+                    <p>Data: ___/___/______</p>
+                    <p>Tempo: 20 minutos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 mb-6">
+            <h3 class="font-bold text-orange-700 mb-2">🎯 Objetivo:</h3>
+            <p class="text-gray-700">Interpretar dados em tabelas e identificar variações</p>
+        </div>
+
+        <!-- Situação Problema -->
+        <div class="bg-blue-50 border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-bold text-blue-800 mb-4">📈 Situação: Vendas da Lanchonete</h4>
+            <p class="text-gray-700 mb-4">
+                A lanchonete da escola registrou as vendas de sanduíches durante uma semana. 
+                Vamos analisar os dados e criar um gráfico!
+            </p>
+            
+            <div class="bg-white p-4 rounded border">
+                <h5 class="font-semibold mb-2">📊 Dados da Semana:</h5>
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-blue-100">
+                            <th class="border border-gray-300 p-2">Dia</th>
+                            <th class="border border-gray-300 p-2">Sanduíches Vendidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="border border-gray-300 p-2">Segunda</td><td class="border border-gray-300 p-2 text-center">25</td></tr>
+                        <tr><td class="border border-gray-300 p-2">Terça</td><td class="border border-gray-300 p-2 text-center">30</td></tr>
+                        <tr><td class="border border-gray-300 p-2">Quarta</td><td class="border border-gray-300 p-2 text-center">35</td></tr>
+                        <tr><td class="border border-gray-300 p-2">Quinta</td><td class="border border-gray-300 p-2 text-center">40</td></tr>
+                        <tr><td class="border border-gray-300 p-2">Sexta</td><td class="border border-gray-300 p-2 text-center">45</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Exercícios -->
+        <div class="space-y-6">
+            <!-- Parte 1 -->
+            <div class="border rounded-lg p-4 bg-gray-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📊 Parte 1: Analisando os Dados</h4>
+                
+                <div class="bg-white p-4 rounded border space-y-3">
+                    <div>
+                        <p><strong>1. Qual dia teve mais vendas?</strong></p>
+                        <p>Resposta: ________________ com ________ sanduíches</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>2. Qual dia teve menos vendas?</strong></p>
+                        <p>Resposta: ________________ com ________ sanduíches</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>3. Quantos sanduíches foram vendidos no total?</strong></p>
+                        <p>25 + 30 + 35 + 40 + 45 = ________ sanduíches</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>4. Qual foi a média de vendas por dia?</strong></p>
+                        <p>Total ÷ 5 dias = ________ ÷ 5 = ________ sanduíches/dia</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 2 -->
+            <div class="border rounded-lg p-4 bg-green-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📈 Parte 2: Criando o Gráfico</h4>
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-4">Complete o gráfico de barras:</p>
+                    
+                    <div class="relative">
+                        <!-- Eixo Y -->
+                        <div class="absolute left-0 top-0 h-80 w-8 flex flex-col-reverse justify-between text-xs">
+                            <span>0</span>
+                            <span>10</span>
+                            <span>20</span>
+                            <span>30</span>
+                            <span>40</span>
+                            <span>50</span>
+                        </div>
+                        
+                        <!-- Área do gráfico -->
+                        <div class="ml-10 border-l-2 border-b-2 border-gray-400 h-80 relative">
+                            <!-- Grade -->
+                            <div class="absolute inset-0 grid grid-rows-5 opacity-20">
+                                <div class="border-t border-gray-300"></div>
+                                <div class="border-t border-gray-300"></div>
+                                <div class="border-t border-gray-300"></div>
+                                <div class="border-t border-gray-300"></div>
+                                <div class="border-t border-gray-300"></div>
+                            </div>
+                            
+                            <!-- Barras -->
+                            <div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-around px-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-500 w-12" style="height: 125px;"></div>
+                                    <span class="text-xs mt-2">Seg</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-300 w-12" style="height: ___px;"></div>
+                                    <span class="text-xs mt-2">Ter</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-300 w-12" style="height: ___px;"></div>
+                                    <span class="text-xs mt-2">Qua</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-300 w-12" style="height: ___px;"></div>
+                                    <span class="text-xs mt-2">Qui</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-300 w-12" style="height: ___px;"></div>
+                                    <span class="text-xs mt-2">Sex</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Título dos eixos -->
+                        <div class="text-center mt-2 text-sm font-semibold">Dias da Semana</div>
+                        <div class="absolute left-0 top-1/2 -rotate-90 text-sm font-semibold -translate-x-6">Sanduíches</div>
+                    </div>
+                    
+                    <div class="mt-4 bg-yellow-50 p-3 rounded">
+                        <p class="font-semibold">Dica para completar:</p>
+                        <p>Se 25 sanduíches = 125px de altura, então:</p>
+                        <p>• 30 sanduíches = ________ px</p>
+                        <p>• 35 sanduíches = ________ px</p>
+                        <p>• 40 sanduíches = ________ px</p>
+                        <p>• 45 sanduíches = ________ px</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 3 -->
+            <div class="border rounded-lg p-4 bg-purple-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🏆 Desafio</h4>
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-2">🎯 Previsão para próxima semana:</p>
+                    <p class="mb-3">
+                        Observando o padrão, as vendas aumentam 5 sanduíches por dia. 
+                        Quantos sanduíches serão vendidos na segunda-feira da próxima semana?
+                    </p>
+                    
+                    <div class="space-y-2">
+                        <p><strong>Padrão identificado:</strong></p>
+                        <p>Segunda: 25 → Terça: 30 (+5)</p>
+                        <p>Terça: 30 → Quarta: 35 (+____)</p>
+                        <p>Quarta: 35 → Quinta: 40 (+____)</p>
+                        <p>Quinta: 40 → Sexta: 45 (+____)</p>
+                        
+                        <p class="mt-3"><strong>Previsão:</strong></p>
+                        <p>Sexta: 45 → Segunda (próxima): 45 + ____ = ________ sanduíches</p>
+                        
+                        <div class="mt-4 bg-yellow-50 p-3 rounded">
+                            <p class="font-semibold">Reflexão:</p>
+                            <p>Por que você acha que as vendas aumentam durante a semana?</p>
+                            <p>_________________________________________________</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><style>
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <!-- Cabeçalho -->
+        <div class="border-b-2 border-orange-500 pb-4 mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-orange-600">EduAdapta - Kit Matemática</h1>
+                    <h2 class="text-xl font-semibold text-gray-700">Atividade 2: Gráfico Simples</h2>
+                </div>
+                <div class="text-right text-sm text-gray-600">
+                    <p>Nome: _________________________</p>
+                    <p>Data: ___/___/______</p>
+                    <p>Tempo: 20 minutos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 mb-6">
+            <h3 class="font-bold text-orange-700 mb-2">🎯 Objetivo:</h3>
+            <p class="text-gray-700">Interpretar dados em tabelas e identificar variações</p>
+        </div>
+
+        <!-- Situação Problema -->
+        <div class="bg-blue-50 border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-bold text-blue-800 mb-4">📈 Situação: Vendas da Lanchonete</h4>
+            <p class="text-gray-700 mb-4">
+                A lanchonete da escola registrou as vendas de sanduíches durante uma semana. 
+                Vamos analisar os dados e criar um gráfico!
+            </p>
+            
+            <div class="bg-white p-4 rounded border">
+                <h5 class="font-semibold mb-2">📊 Dados da Semana:</h5>
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-blue-100">
+                            <th class="border border-gray-300 p-2">Dia</th>
+                            <th class="border border-gray-300 p-2">Sanduíches Vendidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="border border-gray-300 p-2">Segunda</td><td class="border border-gray-300 p-2 text-center">25</td></tr>
+                        <tr><td class="border border-gray-300 p-2">Terça</td><td class="border border-gray-300 p-2 text-center">30</td></tr>
+                        <tr><td class="border border-gray-300 p-2">Quarta</td><td class="border border-gray-300 p-2 text-center">35</td></tr>
+                        <tr><td class="border border-gray-300 p-2">Quinta</td><td class="border border-gray-300 p-2 text-center">40</td></tr>
+                        <tr><td class="border border-gray-300 p-2">Sexta</td><td class="border border-gray-300 p-2 text-center">45</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Exercícios -->
+        <div class="space-y-6">
+            <!-- Parte 1 -->
+            <div class="border rounded-lg p-4 bg-gray-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📊 Parte 1: Analisando os Dados</h4>
+                
+                <div class="bg-white p-4 rounded border space-y-3">
+                    <div>
+                        <p><strong>1. Qual dia teve mais vendas?</strong></p>
+                        <p>Resposta: ________________ com ________ sanduíches</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>2. Qual dia teve menos vendas?</strong></p>
+                        <p>Resposta: ________________ com ________ sanduíches</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>3. Quantos sanduíches foram vendidos no total?</strong></p>
+                        <p>25 + 30 + 35 + 40 + 45 = ________ sanduíches</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>4. Qual foi a média de vendas por dia?</strong></p>
+                        <p>Total ÷ 5 dias = ________ ÷ 5 = ________ sanduíches/dia</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 2 -->
+            <div class="border rounded-lg p-4 bg-green-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📈 Parte 2: Criando o Gráfico</h4>
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-4">Complete o gráfico de barras:</p>
+                    
+                    <div class="relative">
+                        <!-- Eixo Y -->
+                        <div class="absolute left-0 top-0 h-80 w-8 flex flex-col-reverse justify-between text-xs">
+                            <span>0</span>
+                            <span>10</span>
+                            <span>20</span>
+                            <span>30</span>
+                            <span>40</span>
+                            <span>50</span>
+                        </div>
+                        
+                        <!-- Área do gráfico -->
+                        <div class="ml-10 border-l-2 border-b-2 border-gray-400 h-80 relative">
+                            <!-- Grade -->
+                            <div class="absolute inset-0 grid grid-rows-5 opacity-20">
+                                <div class="border-t border-gray-300"></div>
+                                <div class="border-t border-gray-300"></div>
+                                <div class="border-t border-gray-300"></div>
+                                <div class="border-t border-gray-300"></div>
+                                <div class="border-t border-gray-300"></div>
+                            </div>
+                            
+                            <!-- Barras -->
+                            <div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-around px-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-500 w-12" style="height: 125px;"></div>
+                                    <span class="text-xs mt-2">Seg</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-300 w-12" style="height: ___px;"></div>
+                                    <span class="text-xs mt-2">Ter</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-300 w-12" style="height: ___px;"></div>
+                                    <span class="text-xs mt-2">Qua</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-300 w-12" style="height: ___px;"></div>
+                                    <span class="text-xs mt-2">Qui</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="bg-blue-300 w-12" style="height: ___px;"></div>
+                                    <span class="text-xs mt-2">Sex</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Título dos eixos -->
+                        <div class="text-center mt-2 text-sm font-semibold">Dias da Semana</div>
+                        <div class="absolute left-0 top-1/2 -rotate-90 text-sm font-semibold -translate-x-6">Sanduíches</div>
+                    </div>
+                    
+                    <div class="mt-4 bg-yellow-50 p-3 rounded">
+                        <p class="font-semibold">Dica para completar:</p>
+                        <p>Se 25 sanduíches = 125px de altura, então:</p>
+                        <p>• 30 sanduíches = ________ px</p>
+                        <p>• 35 sanduíches = ________ px</p>
+                        <p>• 40 sanduíches = ________ px</p>
+                        <p>• 45 sanduíches = ________ px</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 3 -->
+            <div class="border rounded-lg p-4 bg-purple-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🏆 Desafio</h4>
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-2">🎯 Previsão para próxima semana:</p>
+                    <p class="mb-3">
+                        Observando o padrão, as vendas aumentam 5 sanduíches por dia. 
+                        Quantos sanduíches serão vendidos na segunda-feira da próxima semana?
+                    </p>
+                    
+                    <div class="space-y-2">
+                        <p><strong>Padrão identificado:</strong></p>
+                        <p>Segunda: 25 → Terça: 30 (+5)</p>
+                        <p>Terça: 30 → Quarta: 35 (+____)</p>
+                        <p>Quarta: 35 → Quinta: 40 (+____)</p>
+                        <p>Quinta: 40 → Sexta: 45 (+____)</p>
+                        
+                        <p class="mt-3"><strong>Previsão:</strong></p>
+                        <p>Sexta: 45 → Segunda (próxima): 45 + ____ = ________ sanduíches</p>
+                        
+                        <div class="mt-4 bg-yellow-50 p-3 rounded">
+                            <p class="font-semibold">Reflexão:</p>
+                            <p>Por que você acha que as vendas aumentam durante a semana?</p>
+                            <p>_________________________________________________</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Rodapé local da atividade (opcional; o viewer já tem botão de Imprimir) -->
+    <div class="no-print mt-6 flex gap-4 justify-center">
+      <button
+        onclick="window.print()"
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all"
+      >
+        🖨️ Imprimir
+      </button>
+      <a
+        href="/cliente/matematica"
+        class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-all"
+      >
+        ← Voltar
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduAdapta - Atividades Adaptadas para Ensino Médio</title>
+    <meta
+      name="description"
+      content="Kits de atividades adaptadas para pessoas com deficiência intelectual, baseadas na BNCC do ensino médio. Matemática, Português e Ciências."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Carrega o JS só depois de parsear o HTML -->
+    <script defer src="./app.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <h1 class="text-2xl font-bold text-blue-600">EduAdapta</h1>
+            <span class="ml-2 text-sm text-gray-600">Educação Inclusiva</span>
+          </div>
+
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="#inicio"
+              class="nav-anchor text-gray-700 hover:text-blue-600 transition-colors"
+              >Início</a
+            >
+            <a
+              href="#atividades"
+              class="nav-anchor text-gray-700 hover:text-blue-600 transition-colors"
+              >Atividades Gratuitas</a
+            >
+            <a
+              href="#kits"
+              class="nav-anchor text-gray-700 hover:text-blue-600 transition-colors"
+              >Kits Completos</a
+            >
+            <a
+              href="#sobre"
+              class="nav-anchor text-gray-700 hover:text-blue-600 transition-colors"
+              >Sobre</a
+            >
+            <a
+              href="#contato"
+              class="nav-anchor text-gray-700 hover:text-blue-600 transition-colors"
+              >Contato</a
+            >
+          </nav>
+
+          <div class="flex items-center space-x-4">
+            <button
+              id="btn-area-cliente"
+              class="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Área do Cliente
+            </button>
+            <button id="btn-menu-mobile" class="md:hidden">
+              <i class="fas fa-bars text-gray-600"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+        <div class="px-4 py-2 space-y-2">
+          <a
+            href="#inicio"
+            class="nav-anchor block py-2 text-gray-700 hover:text-blue-600"
+            >Início</a
+          >
+          <a
+            href="#atividades"
+            class="nav-anchor block py-2 text-gray-700 hover:text-blue-600"
+            >Atividades Gratuitas</a
+          >
+          <a
+            href="#kits"
+            class="nav-anchor block py-2 text-gray-700 hover:text-blue-600"
+            >Kits Completos</a
+          >
+          <a
+            href="#sobre"
+            class="nav-anchor block py-2 text-gray-700 hover:text-blue-600"
+            >Sobre</a
+          >
+          <a
+            href="#contato"
+            class="nav-anchor block py-2 text-gray-700 hover:text-blue-600"
+            >Contato</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="inicio"
+      class="bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white py-20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-4xl md:text-6xl font-bold mb-6">
+            Educação Inclusiva<br />
+            <span class="text-yellow-300">para Todos</span>
+          </h2>
+          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+            Atividades adaptadas para pessoas com deficiência intelectual,
+            baseadas na BNCC do Ensino Médio
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <button
+              data-scroll="#atividades"
+              class="btn-scroll bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all transform hover:scale-105"
+            >
+              <i class="fas fa-download mr-2"></i>
+              Atividades Gratuitas
+            </button>
+            <button
+              data-scroll="#kits"
+              class="btn-scroll bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105"
+            >
+              <i class="fas fa-shopping-cart mr-2"></i>
+              Ver Kits Completos
+            </button>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-yellow-300">60+</div>
+              <div class="text-lg opacity-90">Atividades Adaptadas</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-yellow-300">3</div>
+              <div class="text-lg opacity-90">Matérias (BNCC)</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-yellow-300">100%</div>
+              <div class="text-lg opacity-90">Inclusivo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atividades Gratuitas -->
+    <section id="atividades" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h3 class="text-4xl font-bold text-gray-900 mb-4">
+            Experimente Gratuitamente
+          </h3>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Baixe exemplos de nossas atividades adaptadas e veja como
+            facilitamos o aprendizado
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Matemática -->
+          <div
+            class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 hover:shadow-xl transition-all"
+          >
+            <div class="text-center mb-6">
+              <div
+                class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-calculator text-3xl text-white"></i>
+              </div>
+              <h4 class="text-2xl font-bold text-blue-900 mb-2">Matemática</h4>
+              <p class="text-blue-700">Função Linear e Porcentagem</p>
+            </div>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center text-sm text-blue-800">
+                <i class="fas fa-check-circle mr-2 text-green-600"></i
+                ><span>Consumo de Combustível</span>
+              </div>
+              <div class="flex items-center text-sm text-blue-800">
+                <i class="fas fa-check-circle mr-2 text-green-600"></i
+                ><span>Sistema de Descontos</span>
+              </div>
+              <div class="flex items-center text-sm text-blue-800">
+                <i class="fas fa-clock mr-2 text-blue-600"></i
+                ><span>45 minutos cada</span>
+              </div>
+            </div>
+            <button
+              class="btn-atividade w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-all font-medium"
+              data-materia="matematica"
+            >
+              <i class="fas fa-download mr-2"></i>
+              Baixar PDF Gratuito
+            </button>
+          </div>
+
+          <!-- Português -->
+          <div
+            class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 hover:shadow-xl transition-all"
+          >
+            <div class="text-center mb-6">
+              <div
+                class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-book text-3xl text-white"></i>
+              </div>
+              <h4 class="text-2xl font-bold text-green-900 mb-2">Português</h4>
+              <p class="text-green-700">Interpretação e Gramática</p>
+            </div>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center text-sm text-green-800">
+                <i class="fas fa-check-circle mr-2 text-green-600"></i
+                ><span>Texto Narrativo</span>
+              </div>
+              <div class="flex items-center text-sm text-green-800">
+                <i class="fas fa-check-circle mr-2 text-green-600"></i
+                ><span>Análise Gramatical</span>
+              </div>
+              <div class="flex items-center text-sm text-green-800">
+                <i class="fas fa-clock mr-2 text-green-600"></i
+                ><span>40 minutos cada</span>
+              </div>
+            </div>
+            <button
+              class="btn-atividade w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-all font-medium"
+              data-materia="portugues"
+            >
+              <i class="fas fa-download mr-2"></i>
+              Baixar PDF Gratuito
+            </button>
+          </div>
+
+          <!-- Ciências -->
+          <div
+            class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8 hover:shadow-xl transition-all"
+          >
+            <div class="text-center mb-6">
+              <div
+                class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-microscope text-3xl text-white"></i>
+              </div>
+              <h4 class="text-2xl font-bold text-purple-900 mb-2">Ciências</h4>
+              <p class="text-purple-700">Biologia e Química</p>
+            </div>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center text-sm text-purple-800">
+                <i class="fas fa-check-circle mr-2 text-green-600"></i
+                ><span>Sistema Digestivo</span>
+              </div>
+              <div class="flex items-center text-sm text-purple-800">
+                <i class="fas fa-check-circle mr-2 text-green-600"></i
+                ><span>Fotossíntese</span>
+              </div>
+              <div class="flex items-center text-sm text-purple-800">
+                <i class="fas fa-clock mr-2 text-purple-600"></i
+                ><span>50 minutos cada</span>
+              </div>
+            </div>
+            <button
+              class="btn-atividade w-full bg-purple-600 text-white py-3 px-4 rounded-lg hover:bg-purple-700 transition-all font-medium"
+              data-materia="ciencias"
+            >
+              <i class="fas fa-download mr-2"></i>
+              Baixar PDF Gratuito
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kits Completos -->
+    <section id="kits" class="py-20 bg-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h3 class="text-4xl font-bold text-gray-900 mb-4">Kits Completos</h3>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Acesso completo às atividades adaptadas, online e para impressão
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- (seções dos kits: inalteradas, mantidas como no seu HTML) -->
+          <!-- ... copiei exatamente como você enviou ... -->
+          <!-- Kit Matemática -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div
+              class="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <h4 class="text-2xl font-bold">Kit Matemática</h4>
+                  <p class="text-blue-100">20 atividades completas</p>
+                </div>
+                <i class="fas fa-calculator text-4xl opacity-80"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="mb-6">
+                <div class="text-3xl font-bold text-gray-900 mb-2">R$ 97</div>
+                <div class="text-sm text-gray-600">Acesso vitalício</div>
+              </div>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>20 atividades adaptadas</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>Versão online interativa</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>PDFs para impressão</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>Baseado na BNCC</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>Suporte por email</span>
+                </li>
+              </ul>
+              <button
+                onclick="comprarKit('matematica')"
+                class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-all font-bold"
+              >
+                Comprar Agora
+              </button>
+            </div>
+          </div>
+
+          <!-- Kit Português -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div
+              class="bg-gradient-to-r from-green-600 to-green-700 p-6 text-white"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <h4 class="text-2xl font-bold">Kit Português</h4>
+                  <p class="text-green-100">20 atividades completas</p>
+                </div>
+                <i class="fas fa-book text-4xl opacity-80"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="mb-6">
+                <div class="text-3xl font-bold text-gray-900 mb-2">R$ 97</div>
+                <div class="text-sm text-gray-600">Acesso vitalício</div>
+              </div>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>20 atividades adaptadas</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>Versão online interativa</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>PDFs para impressão</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>Baseado na BNCC</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>Suporte por email</span>
+                </li>
+              </ul>
+              <button
+                onclick="comprarKit('portugues')"
+                class="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-all font-bold"
+              >
+                Comprar Agora
+              </button>
+            </div>
+          </div>
+
+          <!-- Kit Ciências -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div
+              class="bg-gradient-to-r from-purple-600 to-purple-700 p-6 text-white"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <h4 class="text-2xl font-bold">Kit Ciências</h4>
+                  <p class="text-purple-100">20 atividades completas</p>
+                </div>
+                <i class="fas fa-microscope text-4xl opacity-80"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="mb-6">
+                <div class="text-3xl font-bold text-gray-900 mb-2">R$ 97</div>
+                <div class="text-sm text-gray-600">Acesso vitalício</div>
+              </div>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>20 atividades adaptadas</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>Versão online interativa</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>PDFs para impressão</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>Baseado na BNCC</span>
+                </li>
+                <li class="flex items-center text-sm">
+                  <i class="fas fa-check text-green-600 mr-3"></i
+                  ><span>Suporte por email</span>
+                </li>
+              </ul>
+              <button
+                onclick="comprarKit('ciencias')"
+                class="w-full bg-purple-600 text-white py-3 px-4 rounded-lg hover:bg-purple-700 transition-all font-bold"
+              >
+                Comprar Agora
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ofertas Especiais (mantido) -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl p-8 text-white relative overflow-hidden"
+          >
+            <div
+              class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold"
+            >
+              OFERTA!
+            </div>
+            <h4 class="text-3xl font-bold mb-2">Kit Completo</h4>
+            <p class="text-lg mb-4 opacity-90">Todos os 3 kits juntos</p>
+            <div class="flex items-center mb-4">
+              <span class="text-2xl line-through opacity-75 mr-3">R$ 291</span>
+              <span class="text-4xl font-bold">R$ 197</span>
+            </div>
+            <ul class="space-y-2 mb-6 text-sm">
+              <li class="flex items-center">
+                <i class="fas fa-check mr-2"></i
+                ><span>60 atividades adaptadas</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-2"></i
+                ><span>Matemática + Português + Ciências</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-2"></i><span>Economia de R$ 94</span>
+              </li>
+            </ul>
+            <button
+              onclick="comprarKit('completo')"
+              class="w-full bg-white text-orange-600 py-3 px-4 rounded-lg hover:bg-gray-100 transition-all font-bold"
+            >
+              Comprar Kit Completo
+            </button>
+          </div>
+
+          <div
+            class="bg-gradient-to-r from-indigo-600 to-purple-700 rounded-xl p-8 text-white relative overflow-hidden"
+          >
+            <div
+              class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold"
+            >
+              ESCOLAS
+            </div>
+            <h4 class="text-3xl font-bold mb-2">Licença Escola</h4>
+            <p class="text-lg mb-4 opacity-90">Para instituições de ensino</p>
+            <div class="flex items-center mb-4">
+              <span class="text-4xl font-bold">R$ 497</span>
+              <span class="text-lg ml-2 opacity-75">/ano</span>
+            </div>
+            <ul class="space-y-2 mb-6 text-sm">
+              <li class="flex items-center">
+                <i class="fas fa-check mr-2"></i
+                ><span>Acesso ilimitado para professores</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-2"></i
+                ><span>Todos os kits inclusos</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-2"></i
+                ><span>Suporte prioritário</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check mr-2"></i
+                ><span>Treinamento para equipe</span>
+              </li>
+            </ul>
+            <button
+              onclick="comprarKit('escola')"
+              class="w-full bg-white text-purple-600 py-3 px-4 rounded-lg hover:bg-gray-100 transition-all font-bold"
+            >
+              Solicitar Licença
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-4xl font-bold text-gray-900 mb-6">
+              Educação Inclusiva<br /><span class="text-blue-600"
+                >que Transforma</span
+              >
+            </h3>
+            <p class="text-lg text-gray-600 mb-6">
+              O EduAdapta nasceu da necessidade de criar materiais educacionais
+              verdadeiramente inclusivos para pessoas com deficiência
+              intelectual. Nossas atividades são cuidadosamente adaptadas
+              seguindo as diretrizes da BNCC para o Ensino Médio.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start">
+                <div
+                  class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1"
+                >
+                  <i class="fas fa-heart text-blue-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900 mb-1">Inclusão Real</h4>
+                  <p class="text-gray-600">
+                    Atividades pensadas para diferentes níveis de aprendizado
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1"
+                >
+                  <i class="fas fa-graduation-cap text-green-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900 mb-1">BNCC Alinhado</h4>
+                  <p class="text-gray-600">
+                    Conteúdo baseado na Base Nacional Comum Curricular
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-4 mt-1"
+                >
+                  <i class="fas fa-users text-purple-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900 mb-1">Para Todos</h4>
+                  <p class="text-gray-600">
+                    Professores, famílias e instituições de ensino
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8"
+            >
+              <div class="grid grid-cols-2 gap-6">
+                <div class="text-center">
+                  <div class="text-4xl mb-2">📚</div>
+                  <div class="font-bold text-2xl text-gray-900">60+</div>
+                  <div class="text-sm text-gray-600">Atividades</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl mb-2">🎯</div>
+                  <div class="font-bold text-2xl text-gray-900">100%</div>
+                  <div class="text-sm text-gray-600">BNCC</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl mb-2">👥</div>
+                  <div class="font-bold text-2xl text-gray-900">1000+</div>
+                  <div class="text-sm text-gray-600">Estudantes</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl mb-2">⭐</div>
+                  <div class="font-bold text-2xl text-gray-900">4.9</div>
+                  <div class="text-sm text-gray-600">Avaliação</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20 bg-gray-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h3 class="text-4xl font-bold text-gray-900 mb-4">
+            Entre em Contato
+          </h3>
+          <p class="text-xl text-gray-600">
+            Dúvidas? Sugestões? Estamos aqui para ajudar!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-envelope text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-1">Email</h4>
+                <p class="text-gray-600">suporteclexploradores@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4"
+              >
+                <i class="fab fa-whatsapp text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-1">WhatsApp</h4>
+                <p class="text-gray-600">(11) 99999-9999</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-clock text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-1">Horário</h4>
+                <p class="text-gray-600">Segunda a Sexta, 9h às 18h</p>
+              </div>
+            </div>
+          </div>
+
+          <form class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Nome</label
+                >
+                <input
+                  type="text"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Mensagem</label
+                >
+                <textarea
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-all font-medium"
+              >
+                Enviar Mensagem
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h4 class="text-2xl font-bold text-blue-400 mb-4">EduAdapta</h4>
+            <p class="text-gray-400 mb-4">
+              Educação inclusiva e adaptada para pessoas com deficiência
+              intelectual.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                ><i class="fab fa-facebook text-xl"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                ><i class="fab fa-instagram text-xl"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                ><i class="fab fa-youtube text-xl"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h5 class="font-bold mb-4">Produtos</h5>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Kit Matemática</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Kit Português</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Kit Ciências</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Kit Completo</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-bold mb-4">Suporte</h5>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Central de Ajuda</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Como Usar</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors">FAQ</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-bold mb-4">Legal</h5>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Termos de Uso</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Política de Privacidade</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Política de Reembolso</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2024 EduAdapta. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div
+      id="loginModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center"
+    >
+      <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 relative">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Área do Cliente</h3>
+          <p class="text-gray-600">Acesse seus kits adquiridos</p>
+        </div>
+
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="loginEmail"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Senha</label
+            >
+            <input
+              type="password"
+              id="loginPassword"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-all font-medium"
+          >
+            Entrar
+          </button>
+        </form>
+
+        <div class="mt-6 text-center">
+          <p class="text-sm text-gray-600">
+            Não tem conta?
+            <a href="#" class="text-blue-600 hover:underline"
+              >Compre um kit primeiro</a
+            >
+          </p>
+        </div>
+
+        <button
+          id="btn-fechar-login"
+          class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+        >
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

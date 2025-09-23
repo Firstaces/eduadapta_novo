@@ -1,0 +1,589 @@
+<!-- CSS local desta atividade -->
+<style>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #111;
+      font-size: 12pt;
+    }
+    a:link:after,
+    a:visited:after {
+      content: "";
+    } /* não imprimir URLs dos links */
+  }
+  .calculator-display {
+    font-family: "Courier New", monospace;
+    background: #1f2937;
+    color: #10b981;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  /* cole aqui suas animações e estilos .combination-animation, .event-flow, .formula-highlight etc */
+</style>
+
+<div class="bg-gray-50 p-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <!-- Cole aqui o CONTEÚDO da atividade (o mesmo que você já tem), 
+         mas sem <!DOCTYPE>, <html>, <head>, <body>, sem Tailwind CDN e sem o script do Cloudflare. -->
+            <style>
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12pt; }
+        }
+        .cylinder-3d {
+            background: linear-gradient(45deg, #3b82f6, #60a5fa);
+            border-radius: 50px 50px 20px 20px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            animation: rotate3d 4s ease-in-out infinite;
+        }
+        @keyframes rotate3d {
+            0%, 100% { transform: perspective(300px) rotateY(0deg) rotateX(5deg); }
+            50% { transform: perspective(300px) rotateY(15deg) rotateX(10deg); }
+        }
+        .cylinder-top {
+            background: radial-gradient(ellipse, #60a5fa, #3b82f6);
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 3px solid #1e40af;
+        }
+        .cylinder-bottom {
+            background: radial-gradient(ellipse, #1e40af, #3b82f6);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 3px solid #1e40af;
+        }
+        .formula-highlight {
+            animation: pulse 2s ease-in-out infinite;
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            color: white;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .interactive-cylinder {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .interactive-cylinder:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        .measurement-line {
+            stroke: #ef4444;
+            stroke-width: 2;
+            stroke-dasharray: 5,5;
+            animation: dash 2s linear infinite;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: -10; }
+        }
+        .calculator-display {
+            font-family: 'Courier New', monospace;
+            background: #1f2937;
+            color: #10b981;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .step-animation {
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .volume-visualization {
+            background: linear-gradient(to bottom, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.3));
+            border: 2px dashed #3b82f6;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .water-level {
+            background: linear-gradient(to top, #3b82f6, #60a5fa);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 0 0 6px 6px;
+            animation: fillUp 3s ease-in-out infinite;
+        }
+        @keyframes fillUp {
+            0%, 100% { height: 20%; }
+            50% { height: 80%; }
+        }
+        .dimension-label {
+            background: #fbbf24;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            position: absolute;
+        }
+        .real-world-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .real-world-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .pi-highlight {
+            background: linear-gradient(45deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <!-- Cabeçalho -->
+        <div class="border-b-2 border-blue-500 pb-4 mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-blue-600">EduAdapta - Kit Matemática</h1>
+                    <h2 class="text-xl font-semibold text-gray-700">Atividade 7: Volume do Cilindro</h2>
+                </div>
+                <div class="text-right text-sm text-gray-600">
+                    <p>Nome: _________________________</p>
+                    <p>Data: ___/___/______</p>
+                    <p>Tempo: 50 minutos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+            <h3 class="font-bold text-blue-700 mb-2">🎯 Objetivo:</h3>
+            <p class="text-gray-700">Compreender e calcular o volume de cilindros através de situações práticas do cotidiano</p>
+        </div>
+
+        <!-- Conceitos Fundamentais -->
+        <div class="bg-gradient-to-r from-purple-100 to-blue-100 border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-bold text-purple-800 mb-4">🔍 O que é um Cilindro?</h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h5 class="font-semibold mb-3 text-center">📐 Elementos do Cilindro</h5>
+                    <div class="relative mx-auto" style="width: 200px; height: 250px;">
+                        <div class="cylinder-3d interactive-cylinder" style="width: 120px; height: 180px; margin: 35px auto;">
+                            <div class="cylinder-top" style="width: 120px; height: 30px;"></div>
+                            <div class="cylinder-bottom" style="width: 120px; height: 30px;"></div>
+                            
+                            <!-- Medidas -->
+                            <div class="dimension-label" style="top: -5px; right: -40px;">r</div>
+                            <div class="dimension-label" style="top: 90px; right: -40px;">h</div>
+                            
+                            <!-- Linhas de medida -->
+                            <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                                <line class="measurement-line" x1="60" y1="15" x2="90" y2="15"/>
+                                <line class="measurement-line" x1="130" y1="15" x2="130" y2="165"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 space-y-2 text-sm">
+                        <p><strong>r =</strong> raio da base circular</p>
+                        <p><strong>h =</strong> altura do cilindro</p>
+                        <p><strong>Base:</strong> círculo (área = π × r²)</p>
+                        <p><strong>Volume:</strong> área da base × altura</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h5 class="font-semibold mb-3 text-center">🧮 Fórmula do Volume</h5>
+                    
+                    <div class="formula-highlight mb-4">
+                        V = π × r² × h
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-yellow-50 p-3 rounded border">
+                            <p class="font-bold mb-2">Onde:</p>
+                            <p><strong>V</strong> = Volume (em unidades cúbicas)</p>
+                            <p><strong class="pi-highlight">π</strong> ≈ 3,14159... (pi)</p>
+                            <p><strong>r</strong> = raio da base</p>
+                            <p><strong>h</strong> = altura</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-3 rounded border">
+                            <p class="font-bold mb-2">💡 Dica:</p>
+                            <p class="text-sm">O volume representa quanto "cabe dentro" do cilindro. Como se fosse enchê-lo com água!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Situação Problema -->
+        <div class="bg-green-50 border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-bold text-green-800 mb-4">🏪 Situação: A Fábrica de Latas</h4>
+            <p class="text-gray-700 mb-4">
+                A empresa "Cilindros & Cia" fabrica diferentes tipos de recipientes cilíndricos. 
+                O engenheiro precisa calcular o volume de cada produto para determinar sua capacidade.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="real-world-item bg-white p-4 rounded border text-center">
+                    <div class="text-4xl mb-2">🥫</div>
+                    <p class="font-bold">Lata de Refrigerante</p>
+                    <p class="text-sm text-gray-600">r = 3,3 cm | h = 12 cm</p>
+                </div>
+                <div class="real-world-item bg-white p-4 rounded border text-center">
+                    <div class="text-4xl mb-2">🛢️</div>
+                    <p class="font-bold">Tambor Industrial</p>
+                    <p class="text-sm text-gray-600">r = 30 cm | h = 85 cm</p>
+                </div>
+                <div class="real-world-item bg-white p-4 rounded border text-center">
+                    <div class="text-4xl mb-2">🍯</div>
+                    <p class="font-bold">Pote de Mel</p>
+                    <p class="text-sm text-gray-600">r = 4 cm | h = 8 cm</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercícios -->
+        <div class="space-y-6">
+            <!-- Exercício 1 -->
+            <div class="border rounded-lg p-4 bg-blue-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📊 Exercício 1: Lata de Refrigerante</h4>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold mb-3">📏 Dados do Problema:</h5>
+                        <div class="space-y-3">
+                            <div class="bg-gray-100 p-3 rounded">
+                                <p class="font-bold">Raio (r) = 3,3 cm</p>
+                                <p class="text-sm text-gray-600">Metade do diâmetro da lata</p>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded">
+                                <p class="font-bold">Altura (h) = 12 cm</p>
+                                <p class="text-sm text-gray-600">Altura total da lata</p>
+                            </div>
+                            <div class="bg-yellow-100 p-3 rounded">
+                                <p class="font-bold">Usar π ≈ 3,14</p>
+                                <p class="text-sm text-gray-600">Aproximação para facilitar os cálculos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold mb-3">🧮 Resolução Passo a Passo:</h5>
+                        
+                        <div class="step-animation space-y-4">
+                            <div class="bg-blue-100 p-3 rounded">
+                                <p class="font-bold mb-2">Passo 1: Aplicar a fórmula</p>
+                                <div class="calculator-display">
+                                    V = π × r² × h
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-100 p-3 rounded">
+                                <p class="font-bold mb-2">Passo 2: Substituir os valores</p>
+                                <div class="calculator-display">
+                                    V = 3,14 × (3,3)² × 12
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-100 p-3 rounded">
+                                <p class="font-bold mb-2">Passo 3: Calcular r²</p>
+                                <p class="text-center">r² = 3,3 × 3,3 = ________ cm²</p>
+                            </div>
+                            
+                            <div class="bg-blue-100 p-3 rounded">
+                                <p class="font-bold mb-2">Passo 4: Calcular o volume</p>
+                                <p class="text-center">V = 3,14 × ________ × 12</p>
+                                <p class="text-center">V = ________ cm³</p>
+                            </div>
+                            
+                            <div class="bg-green-100 p-3 rounded text-center">
+                                <p class="font-bold text-green-700">Volume da lata = ________ cm³</p>
+                                <p class="text-sm mt-2">Isso equivale a ________ mL (1 cm³ = 1 mL)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercício 2 -->
+            <div class="border rounded-lg p-4 bg-purple-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🛢️ Exercício 2: Tambor Industrial</h4>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold mb-3">📊 Visualização do Volume:</h5>
+                        <div class="volume-visualization mx-auto" style="width: 200px; height: 250px;">
+                            <div class="water-level"></div>
+                            <div class="absolute top-2 left-2 text-xs font-bold text-blue-700">
+                                Volume = ?
+                            </div>
+                            <div class="absolute bottom-2 right-2 text-xs font-bold text-blue-700">
+                                r = 30 cm<br>h = 85 cm
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border">
+                        <h5 class="font-semibold mb-3">✏️ Sua vez de calcular:</h5>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Dados:</p>
+                                <p>r = ________ cm</p>
+                                <p>h = ________ cm</p>
+                                <p>π ≈ ________</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Fórmula:</p>
+                                <p class="text-center">V = ________ × ________ × ________</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Cálculo de r²:</p>
+                                <p class="text-center">r² = ________ × ________ = ________ cm²</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-3 rounded">
+                                <p class="font-bold mb-2">Cálculo final:</p>
+                                <p class="text-center">V = ________ × ________ × ________</p>
+                                <p class="text-center">V = ________ cm³</p>
+                            </div>
+                            
+                            <div class="bg-purple-100 p-3 rounded text-center">
+                                <p class="font-bold text-purple-700">Volume = ________ cm³</p>
+                                <p class="text-sm mt-2">= ________ litros (1000 cm³ = 1 L)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercício 3 -->
+            <div class="border rounded-lg p-4 bg-green-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🍯 Exercício 3: Pote de Mel</h4>
+                
+                <div class="bg-white p-4 rounded border">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <div class="text-6xl mb-2">🍯</div>
+                            <p class="font-bold">Pote de Mel</p>
+                            <p class="text-sm">Diâmetro = 8 cm</p>
+                            <p class="text-sm">Altura = 8 cm</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-yellow-100 p-3 rounded">
+                                <p class="font-bold mb-2">⚠️ Atenção!</p>
+                                <p class="text-sm">Foi dado o <strong>diâmetro</strong>, não o raio!</p>
+                                <p class="text-sm mt-2">Raio = Diâmetro ÷ 2</p>
+                            </div>
+                            
+                            <div class="bg-gray-100 p-3 rounded">
+                                <p class="font-bold mb-2">Cálculo do raio:</p>
+                                <p class="text-center">r = ________ ÷ 2 = ________ cm</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-gray-100 p-3 rounded">
+                                <p class="font-bold mb-2">Dados finais:</p>
+                                <p>r = ________ cm</p>
+                                <p>h = ________ cm</p>
+                            </div>
+                            
+                            <div class="bg-gray-100 p-3 rounded">
+                                <p class="font-bold mb-2">Volume:</p>
+                                <p class="text-center">V = π × r² × h</p>
+                                <p class="text-center">V = ________ cm³</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercício 4 - Comparação -->
+            <div class="border rounded-lg p-4 bg-orange-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">📊 Exercício 4: Comparando os Volumes</h4>
+                
+                <div class="bg-white p-4 rounded border">
+                    <h5 class="font-semibold mb-3">📈 Tabela Comparativa</h5>
+                    
+                    <table class="w-full border-collapse border border-gray-400">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="border border-gray-400 p-3">Produto</th>
+                                <th class="border border-gray-400 p-3">Raio (cm)</th>
+                                <th class="border border-gray-400 p-3">Altura (cm)</th>
+                                <th class="border border-gray-400 p-3">Volume (cm³)</th>
+                                <th class="border border-gray-400 p-3">Capacidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-400 p-3">🥫 Lata de Refrigerante</td>
+                                <td class="border border-gray-400 p-3 text-center">3,3</td>
+                                <td class="border border-gray-400 p-3 text-center">12</td>
+                                <td class="border border-gray-400 p-3 text-center">________</td>
+                                <td class="border border-gray-400 p-3 text-center">________ mL</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-400 p-3">🛢️ Tambor Industrial</td>
+                                <td class="border border-gray-400 p-3 text-center">30</td>
+                                <td class="border border-gray-400 p-3 text-center">85</td>
+                                <td class="border border-gray-400 p-3 text-center">________</td>
+                                <td class="border border-gray-400 p-3 text-center">________ L</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-400 p-3">🍯 Pote de Mel</td>
+                                <td class="border border-gray-400 p-3 text-center">4</td>
+                                <td class="border border-gray-400 p-3 text-center">8</td>
+                                <td class="border border-gray-400 p-3 text-center">________</td>
+                                <td class="border border-gray-400 p-3 text-center">________ mL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="mt-4 space-y-3">
+                        <div class="bg-blue-100 p-3 rounded">
+                            <p class="font-bold mb-2">🤔 Questões de Análise:</p>
+                            <p class="text-sm mb-2">1. Qual produto tem o maior volume?</p>
+                            <p class="text-sm">Resposta: ________________________________</p>
+                            
+                            <p class="text-sm mb-2 mt-3">2. Quantas latas de refrigerante cabem no tambor?</p>
+                            <p class="text-sm">Cálculo: ________ ÷ ________ = ________ latas</p>
+                            
+                            <p class="text-sm mb-2 mt-3">3. Se o raio do tambor fosse dobrado, o que aconteceria com o volume?</p>
+                            <p class="text-sm">Resposta: ________________________________</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desafio Extra -->
+            <div class="border rounded-lg p-4 bg-red-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🚀 Desafio Extra: Cilindro Personalizado</h4>
+                
+                <div class="bg-white p-4 rounded border">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-semibold mb-3">🎯 Seu Projeto:</h5>
+                            <p class="text-sm mb-4">
+                                Você precisa projetar um cilindro que tenha exatamente <strong>1 litro</strong> de capacidade (1000 cm³). 
+                                Escolha as dimensões e calcule!
+                            </p>
+                            
+                            <div class="space-y-3">
+                                <div class="bg-gray-100 p-3 rounded">
+                                    <p class="font-bold mb-2">Suas escolhas:</p>
+                                    <p>Raio escolhido: ________ cm</p>
+                                    <p>Altura necessária: ________ cm</p>
+                                </div>
+                                
+                                <div class="bg-gray-100 p-3 rounded">
+                                    <p class="font-bold mb-2">Verificação:</p>
+                                    <p>V = π × r² × h</p>
+                                    <p>V = 3,14 × ________ × ________</p>
+                                    <p>V = ________ cm³</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-semibold mb-3">💡 Dica para resolver:</h5>
+                            <div class="bg-yellow-100 p-4 rounded">
+                                <p class="text-sm mb-2">Se você sabe que V = 1000 cm³, pode usar:</p>
+                                <p class="text-center font-bold">h = V ÷ (π × r²)</p>
+                                <p class="text-center font-bold">h = 1000 ÷ (3,14 × r²)</p>
+                                
+                                <div class="mt-3 p-3 bg-white rounded border">
+                                    <p class="text-sm font-bold mb-2">Exemplo com r = 5 cm:</p>
+                                    <p class="text-sm">h = 1000 ÷ (3,14 × 5²)</p>
+                                    <p class="text-sm">h = 1000 ÷ (3,14 × 25)</p>
+                                    <p class="text-sm">h = 1000 ÷ 78,5</p>
+                                    <p class="text-sm">h ≈ 12,7 cm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumo Final -->
+        <div class="mt-8 bg-gradient-to-r from-blue-100 to-purple-100 border rounded-lg p-6">
+            <h4 class="text-lg font-bold text-gray-800 mb-4">📚 Resumo da Atividade</h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-4 rounded border">
+                    <h5 class="font-semibold mb-3">🔑 Conceitos Aprendidos:</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li>✅ Identificar elementos do cilindro (raio, altura)</li>
+                        <li>✅ Aplicar a fórmula V = π × r² × h</li>
+                        <li>✅ Converter entre unidades (cm³, mL, L)</li>
+                        <li>✅ Resolver problemas práticos</li>
+                        <li>✅ Comparar volumes de diferentes cilindros</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-4 rounded border">
+                    <h5 class="font-semibold mb-3">🌟 Aplicações no Cotidiano:</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li>🥫 Capacidade de latas e recipientes</li>
+                        <li>🛢️ Volume de tanques e reservatórios</li>
+                        <li>🏗️ Cálculos em construção civil</li>
+                        <li>🧪 Experimentos científicos</li>
+                        <li>🍯 Embalagens de produtos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-4 bg-yellow-100 p-4 rounded text-center">
+                <p class="font-bold text-yellow-700 text-lg">
+                    🎓 Parabéns! Você dominou o cálculo de volume de cilindros!
+                </p>
+                <p class="text-sm mt-2">
+                    Agora você pode calcular a capacidade de qualquer recipiente cilíndrico!
+                </p>
+            </div>
+        </div>
+
+    <!-- Rodapé local da atividade (opcional; o viewer já tem botão de Imprimir) -->
+    <div class="no-print mt-6 flex gap-4 justify-center">
+      <button
+        onclick="window.print()"
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all"
+      >
+        🖨️ Imprimir
+      </button>
+      <a
+        href="/cliente/matematica"
+        class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-all"
+      >
+        ← Voltar
+      </a>
+    </div>
+  </div>
+</div>

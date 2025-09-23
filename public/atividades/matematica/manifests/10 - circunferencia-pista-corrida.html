@@ -1,0 +1,349 @@
+<!-- CSS local desta atividade -->
+<style>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #111;
+      font-size: 12pt;
+    }
+    a:link:after,
+    a:visited:after {
+      content: "";
+    } /* não imprimir URLs dos links */
+  }
+  .calculator-display {
+    font-family: "Courier New", monospace;
+    background: #1f2937;
+    color: #10b981;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  /* cole aqui suas animações e estilos .combination-animation, .event-flow, .formula-highlight etc */
+</style>
+
+<div class="bg-gray-50 p-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <!-- Cole aqui o CONTEÚDO da atividade (o mesmo que você já tem), 
+         mas sem <!DOCTYPE>, <html>, <head>, <body>, sem Tailwind CDN e sem o script do Cloudflare. -->
+            <style>
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12pt; }
+        }
+        .track-animation {
+            animation: rotate 4s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .runner {
+            animation: run 2s ease-in-out infinite alternate;
+        }
+        @keyframes run {
+            0% { transform: translateX(0px); }
+            100% { transform: translateX(10px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <!-- Cabeçalho -->
+        <div class="border-b-2 border-orange-500 pb-4 mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-orange-600">EduAdapta - Kit Matemática</h1>
+                    <h2 class="text-xl font-semibold text-gray-700">Atividade 10: Circunferência</h2>
+                </div>
+                <div class="text-right text-sm text-gray-600">
+                    <p>Nome: _________________________</p>
+                    <p>Data: ___/___/______</p>
+                    <p>Tempo: 25 minutos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 mb-6">
+            <h3 class="font-bold text-orange-700 mb-2">🎯 Objetivo:</h3>
+            <p class="text-gray-700">Calcular perímetro e área de circunferências em situações práticas de pistas esportivas</p>
+        </div>
+
+        <!-- Situação Problema -->
+        <div class="bg-blue-50 border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-bold text-blue-800 mb-4">🏃‍♂️ Situação: Pista de Atletismo</h4>
+            <p class="text-gray-700 mb-4">
+                Uma escola está construindo uma pista de corrida circular. O diretor esportivo 
+                precisa calcular quantos metros os atletas percorrerão em cada volta e qual 
+                será a área total ocupada pela pista.
+            </p>
+            
+            <div class="bg-white p-4 rounded border">
+                <h5 class="font-semibold mb-2">📐 Fórmulas da Circunferência:</h5>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-blue-100 p-4 rounded text-center">
+                        <p class="font-bold mb-2">PERÍMETRO (Comprimento)</p>
+                        <p class="text-2xl font-bold mb-2">C = 2πr</p>
+                        <p class="text-sm">ou</p>
+                        <p class="text-2xl font-bold">C = πd</p>
+                        <p class="text-sm mt-2">Onde: r = raio, d = diâmetro</p>
+                    </div>
+                    <div class="bg-green-100 p-4 rounded text-center">
+                        <p class="font-bold mb-2">ÁREA</p>
+                        <p class="text-2xl font-bold mb-2">A = πr²</p>
+                        <p class="text-sm mt-4">Onde: r = raio</p>
+                    </div>
+                </div>
+                <div class="mt-3 bg-yellow-100 p-2 rounded text-center">
+                    <p class="text-sm font-semibold">π ≈ 3,14 (valor aproximado para os cálculos)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercícios -->
+        <div class="space-y-6">
+            <!-- Parte 1 -->
+            <div class="border rounded-lg p-4 bg-gray-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🏃‍♀️ Parte 1: Pista Principal</h4>
+                
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-4">A pista circular tem 50 metros de raio:</p>
+                    
+                    <!-- Diagrama da pista -->
+                    <div class="flex justify-center mb-6">
+                        <div class="relative">
+                            <svg width="300" height="300" viewBox="0 0 300 300" class="border">
+                                <!-- Pista externa -->
+                                <circle cx="150" cy="150" r="120" fill="#E8F5E8" stroke="#4CAF50" stroke-width="4"/>
+                                <!-- Pista interna -->
+                                <circle cx="150" cy="150" r="100" fill="#FFF3E0" stroke="#FF9800" stroke-width="3" stroke-dasharray="5,5"/>
+                                
+                                <!-- Centro -->
+                                <circle cx="150" cy="150" r="3" fill="#D32F2F"/>
+                                
+                                <!-- Raio -->
+                                <line x1="150" y1="150" x2="270" y2="150" stroke="#D32F2F" stroke-width="3"/>
+                                <text x="200" y="140" font-size="14" fill="#D32F2F" font-weight="bold">r = 50m</text>
+                                
+                                <!-- Corredor animado -->
+                                <g class="runner">
+                                    <circle cx="270" cy="150" r="8" fill="#2196F3"/>
+                                    <text x="265" y="155" font-size="12" fill="white">🏃‍♂️</text>
+                                </g>
+                                
+                                <!-- Marcações da pista -->
+                                <circle cx="150" cy="150" r="120" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="10,5" class="track-animation"/>
+                                
+                                <!-- Linha de largada -->
+                                <line x1="150" y1="30" x2="150" y2="50" stroke="#D32F2F" stroke-width="4"/>
+                                <text x="155" y="25" font-size="12" fill="#D32F2F" font-weight="bold">LARGADA</text>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold mb-2">Dados do problema:</p>
+                            <p>• Raio da pista: ________ metros</p>
+                            <p>• Diâmetro da pista: ________ metros</p>
+                            <p>• π ≈ ________</p>
+                        </div>
+                        
+                        <div class="bg-blue-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Calculando o perímetro (uma volta completa):</p>
+                            <p>C = 2πr</p>
+                            <p>C = 2 × ________ × ________</p>
+                            <p>C = ________ × ________</p>
+                            <p>C = ________ metros</p>
+                        </div>
+                        
+                        <div class="bg-green-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Calculando a área da pista:</p>
+                            <p>A = πr²</p>
+                            <p>A = ________ × (________)²</p>
+                            <p>A = ________ × ________</p>
+                            <p>A = ________ m²</p>
+                        </div>
+                        
+                        <div class="bg-yellow-100 p-4 rounded">
+                            <p class="font-semibold text-orange-700">
+                                Resultado: Uma volta completa = ________ metros
+                            </p>
+                            <p class="font-semibold text-green-700">
+                                Área total da pista = ________ m²
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 2 -->
+            <div class="border rounded-lg p-4 bg-green-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🏃‍♂️ Parte 2: Corrida de 1500 metros</h4>
+                <div class="bg-white p-4 rounded border space-y-4">
+                    <p class="font-semibold mb-4">Um atleta vai correr 1500 metros nesta pista. Quantas voltas ele dará?</p>
+                    
+                    <div class="bg-purple-100 p-4 rounded">
+                        <p class="font-semibold mb-2">Cálculo do número de voltas:</p>
+                        <p>Número de voltas = Distância total ÷ Perímetro da pista</p>
+                        <p>Número de voltas = ________ ÷ ________</p>
+                        <p>Número de voltas = ________ voltas</p>
+                    </div>
+                    
+                    <div class="bg-blue-100 p-4 rounded">
+                        <p class="font-semibold mb-2">Verificação:</p>
+                        <p>________ voltas × ________ metros/volta = ________ metros</p>
+                        <p>Diferença: 1500 - ________ = ________ metros</p>
+                        
+                        <p class="mt-2 font-semibold text-blue-700">
+                            O atleta dará ________ voltas completas + ________ metros
+                        </p>
+                    </div>
+                    
+                    <div class="bg-orange-100 p-4 rounded">
+                        <p class="font-semibold mb-2">Tempo estimado:</p>
+                        <p>Se o atleta corre a 5 metros por segundo:</p>
+                        <p>Tempo total = 1500 ÷ 5 = ________ segundos</p>
+                        <p>Em minutos: ________ ÷ 60 = ________ minutos</p>
+                        <p>Tempo por volta: ________ ÷ ________ ≈ ________ segundos/volta</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 3 -->
+            <div class="border rounded-lg p-4 bg-blue-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">⚽ Parte 3: Campo de Futebol com Pista</h4>
+                <div class="bg-white p-4 rounded border space-y-4">
+                    <p class="font-semibold mb-4">No centro da pista será construído um campo de futebol circular com 30m de raio:</p>
+                    
+                    <div class="flex justify-center mb-4">
+                        <svg width="280" height="280" viewBox="0 0 280 280" class="border">
+                            <!-- Pista externa -->
+                            <circle cx="140" cy="140" r="120" fill="#E8F5E8" stroke="#4CAF50" stroke-width="4"/>
+                            <!-- Campo interno -->
+                            <circle cx="140" cy="140" r="72" fill="#C8E6C9" stroke="#2E7D32" stroke-width="3"/>
+                            
+                            <!-- Centro -->
+                            <circle cx="140" cy="140" r="2" fill="#D32F2F"/>
+                            
+                            <!-- Raios -->
+                            <line x1="140" y1="140" x2="260" y2="140" stroke="#D32F2F" stroke-width="2"/>
+                            <text x="190" y="130" font-size="12" fill="#D32F2F" font-weight="bold">50m</text>
+                            
+                            <line x1="140" y1="140" x2="212" y2="140" stroke="#2E7D32" stroke-width="2"/>
+                            <text x="170" y="155" font-size="12" fill="#2E7D32" font-weight="bold">30m</text>
+                            
+                            <!-- Bola -->
+                            <circle cx="140" cy="140" r="4" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
+                            <text x="135" y="145" font-size="8">⚽</text>
+                        </svg>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-red-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Área do campo de futebol:</p>
+                            <p>A = πr²</p>
+                            <p>A = 3,14 × (30)²</p>
+                            <p>A = 3,14 × ________</p>
+                            <p>A = ________ m²</p>
+                        </div>
+                        
+                        <div class="bg-orange-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Área só da pista (sem o campo):</p>
+                            <p>Área da pista = Área total - Área do campo</p>
+                            <p>Área da pista = ________ - ________</p>
+                            <p>Área da pista = ________ m²</p>
+                        </div>
+                        
+                        <div class="bg-green-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Perímetro do campo de futebol:</p>
+                            <p>C = 2πr</p>
+                            <p>C = 2 × 3,14 × 30</p>
+                            <p>C = ________ metros</p>
+                            
+                            <p class="mt-2 font-semibold text-green-700">
+                                Diferença entre os perímetros: ________ - ________ = ________ metros
+                            </p>
+                        </div>
+                        
+                        <div class="bg-purple-100 p-4 rounded">
+                            <p class="font-semibold mb-2">Custo do gramado:</p>
+                            <p>Se 1 m² de grama custa R$ 15,00:</p>
+                            <p>Custo do campo = ________ × R$ 15,00 = R$ ________</p>
+                            <p>Custo da pista = ________ × R$ 15,00 = R$ ________</p>
+                            <p>Custo total = R$ ________ + R$ ________ = R$ ________</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desafio -->
+            <div class="border rounded-lg p-4 bg-purple-50">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">🏆 Desafio</h4>
+                <div class="bg-white p-4 rounded border">
+                    <p class="font-semibold mb-2">🎯 Roda Gigante:</p>
+                    <p class="mb-3">
+                        Uma roda gigante tem 25 metros de raio. Cada volta completa leva 3 minutos.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-100 p-3 rounded">
+                            <p class="font-semibold">Pergunta 1: Distância percorrida em uma volta</p>
+                            <p>C = 2πr = 2 × 3,14 × ________</p>
+                            <p>C = ________ metros</p>
+                        </div>
+                        
+                        <div class="bg-gray-100 p-3 rounded">
+                            <p class="font-semibold">Pergunta 2: Velocidade da roda gigante</p>
+                            <p>Velocidade = Distância ÷ Tempo</p>
+                            <p>Velocidade = ________ ÷ 3 = ________ metros/minuto</p>
+                            <p>Em metros/segundo: ________ ÷ 60 ≈ ________ m/s</p>
+                        </div>
+                        
+                        <div class="bg-gray-100 p-3 rounded">
+                            <p class="font-semibold">Pergunta 3: Distância em 15 minutos</p>
+                            <p>Número de voltas = 15 ÷ 3 = ________ voltas</p>
+                            <p>Distância total = ________ × ________ = ________ metros</p>
+                        </div>
+                        
+                        <div class="bg-gray-100 p-3 rounded">
+                            <p class="font-semibold">Pergunta 4: Altura máxima</p>
+                            <p>Se o centro está a 30m do chão:</p>
+                            <p>Altura máxima = 30 + ________ = ________ metros</p>
+                            <p>Altura mínima = 30 - ________ = ________ metros</p>
+                        </div>
+                        
+                        <div class="mt-4 bg-yellow-50 p-3 rounded">
+                            <p class="font-semibold">Reflexão:</p>
+                            <p>Cite três objetos circulares do seu dia a dia e explique por que conhecer seu perímetro seria útil:</p>
+                            <p>1. ________________________________________________</p>
+                            <p>2. ________________________________________________</p>
+                            <p>3. ________________________________________________</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Rodapé local da atividade (opcional; o viewer já tem botão de Imprimir) -->
+    <div class="no-print mt-6 flex gap-4 justify-center">
+      <button
+        onclick="window.print()"
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all"
+      >
+        🖨️ Imprimir
+      </button>
+      <a
+        href="/cliente/matematica"
+        class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-all"
+      >
+        ← Voltar
+      </a>
+    </div>
+  </div>
+</div>

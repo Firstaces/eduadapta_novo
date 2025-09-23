@@ -1,0 +1,105 @@
+{
+  "kit": "portugues",
+  "atividades": [
+    {
+      "codigo": "P01",
+      "titulo": "Leitura guiada de microconto",
+      "href": "/atividades/portugues/01-leitura-microconto.html"
+    },
+    {
+      "codigo": "P02",
+      "titulo": "Sequência de fatos (tirinha)",
+      "href": "/atividades/portugues/02-sequencia-tirinha.html"
+    },
+    {
+      "codigo": "P03",
+      "titulo": "Mapa de personagens",
+      "href": "/atividades/portugues/03-mapa-de-personagens.html"
+    },
+    {
+      "codigo": "P04",
+      "titulo": "Leitura multimodal (tirinhas)",
+      "href": "/atividades/portugues/04-leitura-multimodal-tirinhas.html"
+    },
+    {
+      "codigo": "P05",
+      "titulo": "Reconto com apoio",
+      "href": "/atividades/portugues/05-reconto-com-apoios.html"
+    },
+    {
+      "codigo": "P06",
+      "titulo": "Vocabulário em contexto",
+      "href": "/atividades/portugues/06-vocabulario-em-contexto.html"
+    },
+    {
+      "codigo": "P07",
+      "titulo": "Gêneros do cotidiano",
+      "href": "/atividades/portugues/07-generos-do-cotidiano.html"
+    },
+    {
+      "codigo": "P08",
+      "titulo": "Produção bilhete",
+      "href": "/atividades/portugues/08-producao-bilhete-modelo.html"
+    },
+    {
+      "codigo": "P09",
+      "titulo": "Cartaz",
+      "href": "/atividades/portugues/09-cartaz-de-convivencia.html"
+    },
+    {
+      "codigo": "P10",
+      "titulo": "Conectivos básicos",
+      "href": "/atividades/portugues/10-conectivos-basicos.html"
+    },
+    {
+      "codigo": "P11",
+      "titulo": "Pontuação do diálogo",
+      "href": "/atividades/portugues/11-pontuacao-do-dialogo.html"
+    },
+    {
+      "codigo": "P12",
+      "titulo": "Notícia manchete",
+      "href": "/atividades/portugues/12-noticia-manchete-e-lead.html"
+    },
+    {
+      "codigo": "P13",
+      "titulo": "Propaganda",
+      "href": "/atividades/portugues/13-propaganda-intencao.html"
+    },
+    {
+      "codigo": "P14",
+      "titulo": "Instruções receita simples",
+      "href": "/atividades/portugues/14-instrucoes-receita-simples.html"
+    },
+    {
+      "codigo": "P15",
+      "titulo": "Reescrita",
+      "href": "/atividades/portugues/15-reescrita-para-clareza.html"
+    },
+    {
+      "codigo": "P16",
+      "titulo": "Ortografia",
+      "href": "/atividades/portugues/16-ortografia-por-padroes.html"
+    },
+    {
+      "codigo": "P17",
+      "titulo": "Expressão oral",
+      "href": "/atividades/portugues/17-expressao-oral-com-apoio.html"
+    },
+    {
+      "codigo": "P18",
+      "titulo": "Poema curto",
+      "href": "/atividades/portugues/18-poema-curto-haicai.html"
+    },
+    {
+      "codigo": "P19",
+      "titulo": "Ideia principal",
+      "href": "/atividades/portugues/19-ideia-principal-e-exemplos.html"
+    },
+    {
+      "codigo": "P20",
+      "titulo": "Projeto final",
+      "href": "/atividades/portugues/20-projeto-final-folheto.html"
+    }
+  ]
+}
