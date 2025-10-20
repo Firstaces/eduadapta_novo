@@ -331,10 +331,18 @@ function gerarAtividadeHTML(materia) {
 
 // ====== Login modal ======
 function abrirLogin() {
-  document.getElementById("loginModal").classList.remove("hidden");
+  const m = document.getElementById("loginModal");
+  if (m) m.classList.remove("hidden");
 }
 function fecharLogin() {
-  document.getElementById("loginModal").classList.add("hidden");
+  const m = document.getElementById("loginModal");
+  if (m) m.classList.add("hidden");
+}
+
+function hasAuthCookie() {
+  return document.cookie
+    .split(";")
+    .some((c) => c.trim().startsWith("ea_auth=1"));
 }
 
 // ====== Bind de eventos na carga ======
@@ -363,16 +371,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // menu mobile
   const menuBtn = document.getElementById("btn-menu-mobile");
   if (menuBtn) {
+    menuBtn.setAttribute("type", "button");
+    menuBtn.setAttribute("aria-label", "Abrir menu");
     menuBtn.addEventListener("click", () => {
       const menu = document.getElementById("mobileMenu");
       if (menu) menu.classList.toggle("hidden");
     });
   }
 
-  // abrir/fechar login
+  // Área do Cliente: se já tiver cookie vai direto; senão, abre modal
   const areaCliente = document.getElementById("btn-area-cliente");
-  if (areaCliente) areaCliente.addEventListener("click", abrirLogin);
+  if (areaCliente) {
+    areaCliente.setAttribute("type", "button");
+    areaCliente.setAttribute("aria-label", "Área do Cliente");
+    areaCliente.addEventListener("click", () => {
+      if (hasAuthCookie()) {
+        window.location.href = "/cliente"; // carrega rota Next (middleware já libera)
+      } else {
+        abrirLogin(); // mostra modal para login
+      }
+    });
+  }
 
+  // fechar modal
   const fecharLoginBtn = document.getElementById("btn-fechar-login");
   if (fecharLoginBtn) fecharLoginBtn.addEventListener("click", fecharLogin);
 
@@ -383,19 +404,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // form login
+  // form login → POST /api/login (Next) → redireciona para /cliente
   const form = document.getElementById("loginForm");
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
-      if (email && password) {
-        alert(
-          "Login realizado com sucesso! Redirecionando para área do cliente..."
-        );
-        fecharLogin();
-        // window.location.href = '/area-cliente';
+
+      try {
+        const resp = await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, senha: password }),
+        });
+
+        if (!resp.ok) {
+          mostrarMensagem("Email ou senha inválidos.", "error");
+          return;
+        }
+
+        mostrarMensagem("Login realizado! Redirecionando…", "success");
+
+        // pequena espera para o cookie assentar
+        setTimeout(() => {
+          const next =
+            new URLSearchParams(window.location.search).get("next") ||
+            "/cliente";
+          window.location.href = next; // redirecionamento "duro" para a rota Next
+        }, 120);
+      } catch {
+        mostrarMensagem("Falha ao conectar. Tente novamente.", "error");
       }
     });
   }

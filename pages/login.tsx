@@ -1,63 +1,122 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
+// pages/login.tsx
 import { useState } from "react";
 
-export default function Login() {
-  const router = useRouter();
-  const [senha, setSenha] = useState("");
+export default function LoginPage() {
+  const [email, setEmail] = useState("teste@eduadapta.com");
+  const [senha, setSenha] = useState("teste123");
   const [erro, setErro] = useState<string | null>(null);
-  const next = (router.query.next as string) || "/cliente";
+  const [loading, setLoading] = useState(false);
 
-  async function onSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setErro(null);
-    const res = await fetch("/api/login", {
+    setLoading(true);
+
+    const resp = await fetch("/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password: senha }),
+      body: JSON.stringify({ email, senha }),
     });
-    if (res.ok) {
-      router.replace(next);
-    } else {
-      const j = await res.json().catch(() => ({}));
-      setErro(j?.message || "Senha inválida");
+
+    setLoading(false);
+
+    if (!resp.ok) {
+      setErro("Email ou senha inválidos.");
+      return;
     }
+
+    // espera curtinha para o cookie ‘assentar’
+    await new Promise((r) => setTimeout(r, 80));
+
+    const next =
+      new URLSearchParams(window.location.search).get("next") || "/cliente";
+    window.location.assign(next); // redirecionamento “duro” (middleware já enxerga o cookie)
   }
 
   return (
-    <>
-      <Head>
-        <title>Login da Área do Cliente</title>
-      </Head>
-      <main className="min-h-screen flex items-center justify-center p-6 bg-slate-50">
-        <form
-          onSubmit={onSubmit}
-          className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-6 shadow"
-        >
-          <h1 className="text-xl font-bold mb-4">Área do Cliente</h1>
-          <label className="block text-sm font-medium mb-1">
-            Senha de teste
-          </label>
+    <main
+      style={{
+        minHeight: "60vh",
+        display: "grid",
+        placeItems: "center",
+        fontFamily: "system-ui",
+      }}
+    >
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          width: 360,
+          background: "white",
+          padding: 24,
+          borderRadius: 12,
+          boxShadow: "0 10px 30px rgba(0,0,0,.08)",
+        }}
+      >
+        <h1 style={{ margin: 0 }}>Área do Cliente</h1>
+        <p style={{ marginTop: 8, opacity: 0.8 }}>
+          Acesse seus kits adquiridos
+        </p>
+
+        <label style={{ display: "block", marginTop: 16 }}>
+          <span>Email</span>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{
+              width: "100%",
+              padding: 10,
+              borderRadius: 8,
+              border: "1px solid #ddd",
+              marginTop: 6,
+            }}
+          />
+        </label>
+
+        <label style={{ display: "block", marginTop: 12 }}>
+          <span>Senha</span>
           <input
             type="password"
-            className="w-full border rounded-lg p-2 mb-3"
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
-            placeholder="Digite a senha"
             required
+            style={{
+              width: "100%",
+              padding: 10,
+              borderRadius: 8,
+              border: "1px solid #ddd",
+              marginTop: 6,
+            }}
           />
-          {erro && <p className="text-sm text-red-600 mb-3">{erro}</p>}
-          <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-2 font-semibold"
-          >
-            Entrar
-          </button>
-          <p className="text-xs text-slate-500 mt-3">
-            Você será redirecionado para: <code>{next}</code>
-          </p>
-        </form>
-      </main>
-    </>
+        </label>
+
+        {erro && <div style={{ color: "#b00020", marginTop: 10 }}>{erro}</div>}
+
+        <button
+          type="submit"
+          disabled={loading}
+          style={{
+            width: "100%",
+            marginTop: 16,
+            padding: 12,
+            borderRadius: 8,
+            background: "#1d4ed8",
+            color: "white",
+            border: "none",
+            fontWeight: 600,
+          }}
+        >
+          {loading ? "Entrando..." : "Entrar"}
+        </button>
+
+        <a
+          href="/"
+          style={{ display: "inline-block", marginTop: 12, opacity: 0.8 }}
+        >
+          ← Voltar
+        </a>
+      </form>
+    </main>
   );
 }
